@@ -1,12 +1,10 @@
-import Link from "next/link";
-import Navbar from "../pages/navbar"
+import Navbar from "../pages/navbar";
 
-function Home() {
+function App() {
   return (
-      <div>
-          <Navbar />
+    <div>
+      <Navbar />
     </div>
   );
 }
-
-export default Home;
+export default  App;
