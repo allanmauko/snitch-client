@@ -30,7 +30,7 @@ a {
 .top {
   width: 100%;
   height: 100px;
-  background-color: rgb(83, 30, 143);
+  background-color: #9054F7 ;
   position: sticky;
   top: 0;
   display: flex;
@@ -55,6 +55,7 @@ a {
 }
 
 .topCenter {
+  justify-content: right;
   flex: 9;
 }
 
@@ -67,9 +68,13 @@ a {
 }
 
 .topListItem {
-  margin-right: 20px;
-  font-size: 18px;
-  font-weight: 300;
+  font-family: 'Itim';
+font-style: normal;
+font-weight: 400;
+font-size: 30px;
+line-height: 36px;
+color: #fff6f6;
+  margin-right: 30px;
   cursor: pointer;
 }
 

@@ -20,15 +20,13 @@ function Navbar() {
       </div>
       <div className="topCenter">
         <ul className="topList">
-          <li className="topListItem">
+          <li className="topListItem ">
             <Link href="/">
               <a>HOME</a>
             </Link>
           </li>
-          <li className="topListItem">ABOUT</li>
-          <li className="topListItem">CONTACT</li>
           <li className="topListItem">
-            <Link href="/write">WRITE</Link>
+            <Link href="/blog">BLOG</Link>
           </li>
           {user && <li className="topListItem">LOGOUT</li>}
         </ul>
