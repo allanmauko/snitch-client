@@ -49,7 +49,7 @@ function Footer() {
             </section>
           </div>
           <div class="text-center p-3">
-            © 2020 Copyright:
+            © 2022 Copyright:
             <a class="text-white" href="">
               Snitch.com
             </a>
