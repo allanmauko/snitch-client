@@ -6,10 +6,10 @@ import Articles from "./articles";
 function App() {
   return (
     <>
-      {/* <Navbar /> */}
-      {/* <About /> */}
+      <Navbar />
+      <About />
       <Articles />
-      {/* <Footer /> */}
+      <Footer />/
     </>
   );
 }

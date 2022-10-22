@@ -1,9 +1,9 @@
 function About() {
   return (
     <div className="container">
-      <div className="row" style={{ backgroundColor: "plum" }}>
-        <div className="col"> 12345</div>
-        <div className="col">54321</div>
+      <div className="row">
+        <div className="col"><h1>A few words about this blog<br/>platform,  Snitch, and how<br/> this site was made</h1></div>
+        <div className="col"></div>
       </div>
     </div>
   );
