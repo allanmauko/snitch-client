@@ -12,10 +12,10 @@ function Navbar() {
   return (
     <div className="top">
       <div className="topLeft">
-      {/* <FontAwesomeIcon icon={faFacebook} /> */}
+        {/* <FontAwesomeIcon icon={faFacebook} /> */}
         <i className="topIcon fab fa-instagram-square"></i>
         <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i> 
+        <i className="topIcon fab fa-twitter-square"></i>
         <h1>Snitch</h1>
       </div>
       <div className="topCenter">
@@ -32,28 +32,26 @@ function Navbar() {
         </ul>
       </div>
       <div className="topRight">
-      {user ? (
-         <Link href="/settings">
-        <Image
-          loader={myLoader}
-          src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
-          alt="Picture of the author"
-          width={100}
-          height={100}
-        />
-        </Link>
-         ) : (
-
-        <ul className="topList">
-          <li className="topListItem">
-            <Link href="/login">LOGIN</Link>
-          </li>
-          <li className="topListItem">
-            <Link href="/register">REGISTER</Link>
-          </li>
-        </ul>
-
-         )}
+        {user ? (
+          <Link href="/settings">
+            <Image
+              loader={myLoader}
+              src="https://img.huffingtonpost.com/asset/5cd367c02300003000b78bae.jpeg?ops=1778_1000"
+              alt="Picture of the author"
+              width={100}
+              height={100}
+            />
+          </Link>
+        ) : (
+          <ul className="topList">
+            <li className="topListItem">
+              <Link href="/login">LOGIN</Link>
+            </li>
+            <li className="topListItem">
+              <Link href="/register">REGISTER</Link>
+            </li>
+          </ul>
+        )}
       </div>
     </div>
   );
