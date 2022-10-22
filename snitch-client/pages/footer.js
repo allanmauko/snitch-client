@@ -1,5 +1,5 @@
 
-function Footer({}) {
+function Footer() {
   return (
     <div>
     <div class="container-fluid" background-color="#9054F7">
@@ -25,7 +25,7 @@ function Footer({}) {
             </div>
             <div class="col-md-5 col-12">
               <div class="form-outline form-white mb-4">
-                <input type="email" id="form5Example2" class="form-control"  />
+                <input type="email" id="form5Example2" class="form-control" text />
                 <label class="form-label" for="form5Example2">Email address</label>
               </div>
             </div>
