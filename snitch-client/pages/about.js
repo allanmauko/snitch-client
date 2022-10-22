@@ -6,8 +6,8 @@ function About() {
     return (
     
     <div className="container-fluid">
-    <div className="row" style={{ backgroundColor: "plum" }}>
-      <div className="col-sm-6">
+    <div className="row" style={{ backgroundColor: "gray" }}>
+      <div className="col-sm-6" style={{ backgroundColor: "blue" }}>
         <h2>A few words about this blog platform,  <br /> 
         Snitch, and how this site was made</h2>
         <p>Why Snitch instead of Medium, WordPress or other options?</p>
