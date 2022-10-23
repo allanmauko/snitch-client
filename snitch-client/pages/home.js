@@ -1,12 +1,20 @@
-import Link from "next/link";
-import Navbar from "../pages/navbar"
+import Navbar from "../pages/navbar";
+import Banner from "./banner";
+import About from "../pages/about";
+import ArticleCard from "./articleCard";
+import Footer from "./footer";
+import Login from "./login";
 
-function Home() {
+function App() {
   return (
-      <div>
+    <div>
           <Navbar />
+          <Login />
+          <Banner />
+          <About />
+          <ArticleCard />
+          <Footer />
     </div>
   );
 }
-
-export default Home;
+export default  App;
