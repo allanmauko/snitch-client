@@ -4,7 +4,7 @@ function Footer() {
     <div>
     <div class="container-fluid" background-color="#9054F7">
     <footer class="bg-success text-center text-white">
-    <div class="container p-5 pb-0">
+    <div class="container p-5 pb-0" >
       <section class="">
         <form action="">
           <div class="row d-flex justify-content-center">
