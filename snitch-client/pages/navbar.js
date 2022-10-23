@@ -1,6 +1,10 @@
 import Image from 'next/image';
 import Link from "next/link";
 
+// import {faFacebook,} from "@fortawesome/free-solid-svg-icons"
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+
 
 function Navbar() {
   const myLoader = ({ src, width, quality }) => {
