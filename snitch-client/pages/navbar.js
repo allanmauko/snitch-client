@@ -1,7 +1,5 @@
 import Image from 'next/image';
 import Link from "next/link";
-import {faFacebook,} from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
 function Navbar() {
@@ -12,7 +10,7 @@ function Navbar() {
   return (
     <div className="top">
       <div className="topLeft">
-        <FontAwesomeIcon icon={faFacebook} />
+        {/* <FontAwesomeIcon icon={faFacebook} /> */}
         <i className="topIcon fab fa-instagram-square"></i>
         <i className="topIcon fab fa-pinterest-square"></i>
         <i className="topIcon fab fa-twitter-square"></i>
