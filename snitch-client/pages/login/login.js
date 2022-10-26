@@ -10,7 +10,7 @@ const Login = () => {
           <div className="form-wrapper">
             <div className="form-header">
 				<span className="form-title">
-					Login to <strong>Your app name</strong>
+					Login to <strong>BuildCon</strong>
 				</span>
             </div>
 

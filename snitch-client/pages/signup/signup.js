@@ -71,7 +71,7 @@ function SignUp() {
           <div className="form-wrapper">
             <div className="form-header">
 				<span className="form-title">
-					Sign up to <strong>Build Con</strong>
+					Sign up to <strong>BuildCon</strong>
 				</span>
             </div>
 
