@@ -28,7 +28,12 @@ function App() {
     })
   }, [])
 
-  console.log(articles)
+  // console.log(articles)
+
+    function removeArticle(id){
+    const updatedArticles = articles.filter((article) => article.id !== id)
+    setArticles(updatedArticles)
+  }
 
   if(loading){
     return (
@@ -45,7 +50,7 @@ function App() {
           <Login />
           <Banner />
           <About />
-          <Articles articles={articles}/>
+          <Articles articles={articles} removeArticle={removeArticle} />
           {/* <ArticleCard /> */}
           <Footer />
         

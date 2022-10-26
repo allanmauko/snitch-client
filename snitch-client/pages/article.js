@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function Article({ id, name, info, image, price }) {
+function Article({ id, name, info, image, removeArticle }) {
 
   const [seeMore, setSeeMore] = useState(false);
   
@@ -31,7 +31,9 @@ function Article({ id, name, info, image, price }) {
       <img src={image} class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{name}</h5>
-        <p class="card-text">{info}</p>
+        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
+        <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
+        <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
       </div>
     </div>
   </div>
@@ -40,8 +42,9 @@ function Article({ id, name, info, image, price }) {
       <img src={image} class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{name}</h5>
-        <p class="card-text">{info}</p>
-      </div>
+        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
+        <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
+        <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button></div>
     </div>
   </div>
   <div class="col">
@@ -49,7 +52,9 @@ function Article({ id, name, info, image, price }) {
       <img src={image} class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{name}</h5>
-        <p class="card-text">{info}</p>
+        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
+        <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
+        <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
       </div>
     </div>
   </div>

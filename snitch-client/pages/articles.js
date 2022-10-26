@@ -1,7 +1,7 @@
 import React from 'react'
 import Article from './article'
 
-function Articles({articles}) {
+function Articles({articles, removeArticle}) {
   return (
     <>
         <div>
@@ -10,7 +10,7 @@ function Articles({articles}) {
         <div>
           {articles.map((article) => {
             return (
-              <Article key={article.id} {...article} />
+              <Article key={article.id} {...article} removeArticle={removeArticle} />
             )
           })}
         </div>
