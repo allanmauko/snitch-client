@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
-import Header from '../../components/header/header';
-// import Swal from 'sweetalert2/dist/sweetalert2.all.min.js'
+import React, { useState, useEffect } from "react";
+import Swal from "sweetalert2";
+import Header from "../../components/header/header";
 // import Link from "next/link";
+
 function SignUp() {
   // Declaring the initials
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordConfirm, setPasswordConfirm] = useState('');
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirm, setPasswordConfirm] = useState("");
 
   // handle user registration
   function handleSubmit(e) {
@@ -16,115 +17,133 @@ function SignUp() {
     if (password !== passwordConfirm) {
       // if  sign up failed
       let misMatchAlert = Swal.fire({
-        type: 'error',
-        title: 'Oops...',
-        text: 'Passwords don\'t match',
+        type: "error",
+        title: "Oops...",
+        text: "Passwords don't match"
       });
       // after alert reload page
-      misMatchAlert.then(function() {
-        window.location = '/signup';
+      misMatchAlert.then(function () {
+        window.location = "/signup";
       });
       return;
     }
+
     // send data to server
-    fetch('http://127.0.0.1:3000/signup', {
-      method: 'POST',
+    fetch("http://127.0.0.1:3000/signup", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         username: username,
         email: email,
-        password: password,
-      }),
-    }).then((response) => response.json()).then((data) => {
-      console.log(data);
-      // if account created successfully
-      let successAlert = new Swal({
-        title: 'Success!',
-        text: 'User saved successfully!',
-        type: 'success',
+        password: password
+      })
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        // if account created successfully
+        let successAlert = new Swal({
+          title: "Success!",
+          text: "User saved successfully!",
+          type: "success"
+        });
+        // after successful sign up then login
+        successAlert.then(function () {
+          sessionStorage.setItem("user_id", JSON.stringify(user.id))
+          window.location = "/login";
+        });
+      })
+      .catch((err) => {
+        console.log(err);
+        // if  sign up failed
+        let failAlert = new Swal({
+          title: "Oops!",
+          text: "User not saved!",
+          type: "error"
+        });
+        // after alert reload page
+        failAlert.then(function () {
+          window.location = "/signup";
+        });
       });
-      // after successful sign up then login
-      successAlert.then(function() {
-        window.location = '/login';
-      });
-    }).catch((err) => {
-      console.log(err);
-      // if  sign up failed
-      let failAlert = new Swal({
-        title: 'Oops!',
-        text: 'User not saved!',
-        type: 'error',
-      });
-      // after alert reload page
-      failAlert.then(function() {
-        window.location = '/signup';
-      });
-    });
   }
 
   return (
-      <>
-        <Header/>
-        <div className="form-main-container">
-          <div className="form-wrapper">
-            <div className="form-header">
-				<span className="form-title">
-					Sign up to <strong>BuildCon</strong>
-				</span>
+    <div className="container border-dark rounded mb-3 mt-5 justify-content-centre">
+      <form
+        onSubmit={handleSubmit}
+        className="card text-dark mb-3"
+        style={{ backgroundColor: "#BD9FF9", maxWidth: "35rem" }}
+      >
+        <h4 className="card-header">Welcome to Snitch</h4>
+        <div className="card-body">
+          <fieldset>
+            <div className="form-group">
+              <label htmlFor="userName" className="form-label mt-4">
+                Username:
+              </label>
+              <input
+                type="name"
+                className="form-control"
+                id="userName"
+                value={username}
+                placeholder="username"
+                onChange={(e) => setUsername(e.target.value)}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="userEmail" className="form-label mt-4">
+                Email:
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="userEmail"
+                value={email}
+                placeholder="Email"
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
 
-            <form className="form-content">
-              <div className="input-wrapper">
-                <input className="input-style" type="text" name="username"
-                       placeholder="Username" required/>
-                <span className="input-style-focus"></span>
-              </div>
-              <div className="input-wrapper">
-                <input className="input-style" type="email" name="email"
-                       placeholder="Email" required/>
-                <span className="input-style-focus"></span>
-              </div>
-              <div className="input-wrapper">
-                <div className="input-group">
-                  <input className="form-control" type="password"
-                         placeholder="Password" id="password" required/>
-                  <span className="form-control-focus"></span>
-                  <div className="input-group-addon"
-                       onClick="passwordVisibility();">
-                    <i className="fa fa-eye" id="showPass"></i>
-                    <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                  </div>
-                </div>
-              </div>
-
-              <div className="input-wrapper">
-                <input className="form-control" type="password"
-                       placeholder="Repeat Password" id="repeatPassword"
-                       required/>
-                <span className="input-style-focus"></span>
-              </div>
-
-              <div className="checkbox-wrapper mt-4">
-                <input type="checkbox" className="checkbox-style" id="checkbox"
-                       name="remember-me" required/>
-                <label className="label-checkbox-style" htmlFor="checkbox">
-                  I agree with terms and conditions
-                </label>
-              </div>
-
-              <button className="button-style w-100">
+            <div className="form-group">
+              <label htmlFor="userPassword" className="form-label mt-4">
+                Password:
+              </label>
+              <input
+                className="form-control"
+                type="password"
+                id="password"
+                value={password}
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                autoComplete="current-password"
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="userConfirmPassword" className="form-label mt-4">
+                Confirm-Password:
+              </label>
+              <input
+                type="password"
+                className="form-control"
+                id="userPassword"
+                value={passwordConfirm}
+                placeholder="re-enter Password"
+                onChange={(e) => setPasswordConfirm(e.target.value)}
+              />
+            </div>
+            <div className="d-grid mt-3 d-flex justify-content-center">
+              <button className="btn btn-warning text-nowrap" type="submit">
                 Sign Up
               </button>
-
-              <p className="txt-style1 mt-5">Already a member? <a
-                  className="txt-style2" href="#"><strong>Sign In!</strong></a>
-              </p>
-            </form>
-          </div>
+              {/* <!-- Register buttons --> */}
+            </div>
+          </fieldset>
         </div>
-      </>
+      </form>
+    </div>
   );
 }
 

@@ -24,8 +24,8 @@ const Banner = () => {
                   <h5>Write With Us!</h5>
                   <p>Deepen readers' understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
-                  <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
-                  </p>
+                  {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
+                  </p> */}
                 </div>
             </div>
             <div className="carousel-item">
@@ -34,8 +34,8 @@ const Banner = () => {
                   <h5>Authenticity</h5>
                   <p>Deepen readers' understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
-                  <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
-                  </p>
+                  {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
+                  </p> */}
                 </div>
             </div>
             <div className="carousel-item">
@@ -44,8 +44,8 @@ const Banner = () => {
                   <h5>True Champions</h5>
                   <p>Deepen readers' understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
-                  <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
-                  </p>
+                  {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
+                  </p> */}
                 </div>
             </div>
           </div>

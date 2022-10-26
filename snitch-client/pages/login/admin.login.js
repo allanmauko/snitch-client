@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import Header from "../../components/header/header";
-// import { useNavigate } from "react-router-dom";
 
-function Login({ setUser }) {
+function AdminLogin({ setUser }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
 
-  function handleUserSubmit(e) {
+  function handleAdminSubmit(e) {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("http://127.0.0.1:3000/admin_login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -22,9 +21,8 @@ function Login({ setUser }) {
       if (r.ok) {
         r.json().then((user) => {
           setUser(user);
-          console.log(user);
         });
-        window.location = "/";
+        window.location = "/admin_me";
       } else {
         r.json().then((err) => setErrors(err.errors));
       }
@@ -97,13 +95,6 @@ function Login({ setUser }) {
             >
               Login
             </button>
-
-            <p className="txt-style1 mt-5">
-              Not a member yet?{" "}
-              <a className="txt-style2" href="/signup">
-                <strong>Sign Up</strong>
-              </a>
-            </p>
           </form>
         </div>
       </div>
@@ -111,4 +102,4 @@ function Login({ setUser }) {
   );
 }
 
-export default Login;
+export default AdminLogin;

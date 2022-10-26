@@ -5,11 +5,13 @@ import About from '../../sections/about';
 import Services from '../../sections/services';
 import Team from '../../sections/team';
 import Footer from '../../sections/footer';
+import SignUp from '../signup/signup';
 
 const Page = () => {
   return (
       <div>
         <Header/>
+        
         <Banner />
         <About />
         <Services/>

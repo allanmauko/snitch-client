@@ -4,7 +4,7 @@ const Footer = () => {
   return (
       <footer className="bg-dark p-2 text-center">
         <div className="container">
-          <p className="text-white">All Right Reserved By @@BuildCon</p>
+          <p className="text-white">All Right Reserved By @BuildCon</p>
         </div>
       </footer>
   );
