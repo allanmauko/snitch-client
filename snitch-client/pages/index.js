@@ -13,7 +13,7 @@ export default function Home() {
   return (
       <div>
         <Head>
-          <title>Responsive Travel Website</title>
+          <title>BuildCon</title>
           <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css" rel="stylesheet"/>
 
           <link rel="icon" href="/pro.ico" />
