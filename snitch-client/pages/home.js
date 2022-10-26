@@ -45,9 +45,9 @@ function App() {
           <Login />
           <Banner />
           <About />
-          <ArticleCard />
-          <Footer />
           <Articles articles={articles}/>
+          {/* <ArticleCard /> */}
+          <Footer />
         
     </div>
   );
