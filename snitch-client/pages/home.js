@@ -1,12 +1,42 @@
+import { useState, useEffect } from "react";
 import Navbar from "../pages/navbar";
 import Banner from "./banner";
 import About from "../pages/about";
 import ArticleCard from "./articleCard";
 import Footer from "./footer";
 import Login from "./login";
+import Loading from "./loading";
+import Articles from "./articles";
 
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    setLoading(true)
+    fetch("https://course-api.com/react-tours-project")
+    .then(res => res.json())
+    .then(data => {
+      setLoading(false)
+      setTours(data)
+    })
+    .catch(error => {
+      setLoading(false)
+      console.log(error)
+    })
+  }, [])
+
+  if(loading){
+    return (
+      <main>
+        <Loading />
+      </main>
+    )
+  }
+
+
   return (
     <div>
           <Navbar />
@@ -15,6 +45,8 @@ function App() {
           <About />
           <ArticleCard />
           <Footer />
+          <Articles articles={articles} />
+        
     </div>
   );
 }
