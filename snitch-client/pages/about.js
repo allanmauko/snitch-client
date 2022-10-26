@@ -1,3 +1,4 @@
+// import { Fragment } from "react";
 
 function About() {
   return (
@@ -12,7 +13,7 @@ function About() {
               fontSize: "40px",
               lineHeight: "51px",
               textAlign: "center",
-              color: "#000000",
+              color: "#000000"
             }}
           >
             A few words about this blog platform, <br />
@@ -23,7 +24,8 @@ function About() {
           <div class="container">
             <div class="row justify-content-between">
               <div class="col-4">
-                <img class='rounded'
+                <img
+                  class="rounded"
                   src="https://pilbox.themuse.com/image.jpg?filter=antialias&h=384&opt=1&pos=top-left&prog=1&q=keep&url=https%3A%2F%2Fcms-assets.themuse.com%2Fmedia%2Flead%2Fquestions-to-ask-05202022-602012447-Thomas-Barwick.jpg%3Fv%3Ded8d97d1eee7834c77adc5d87afe41247a8b2473&w=767"
                   alt="Holding image"
                   width="200px"
@@ -35,7 +37,22 @@ function About() {
                 <h5>Mika Matikainen</h5>
                 <p>Apr 15, 2020 · 4 min read</p>
               </div>
-              <div class="col-4">Social media icons</div>
+              <div class="col-4">
+                Social media icons
+                
+                  <div class="d-flex justify-content-start">
+                    <a href="#!">
+                      <i class="fab fa-facebook-f fa-lg me-3"></i>
+                    </a>
+                    <a href="#!">
+                      <i class="fab fa-twitter fa-lg me-3"></i>
+                    </a>
+                    <a href="#!">
+                      <i class="fab fa-instagram fa-lg"></i>
+                    </a>
+                  </div>
+              
+              </div>
             </div>
           </div>
           <div>
@@ -55,3 +72,68 @@ function About() {
   );
 }
 export default About;
+
+
+
+
+
+
+
+
+
+
+//   <div className="login-page">
+// <div className="login-box">
+//   <div className="illustration-wrapper">
+//     <img src="https://mixkit.imgix.net/art/preview/mixkit-left-handed-man-sitting-at-a-table-writing-in-a-notebook-27-original-large.png?q=80&auto=format%2Ccompress&h=700" alt="Login"/>
+//   </div>
+// {/* <Col xs={24} md={12}> */}
+// <Form 
+//     name="login-form"
+//   >
+//     <p className="form-title">LOG IN</p>
+//     <Form.Item
+//       name="email"
+//       rules={[{required: true, message: 'Please input your email!'}]}
+//     >
+//       <Input
+//         placeholder="Input email"
+//         name="email"
+//         value={loginData.email}
+//         onChange={(event)=> setEmail(event.target.value)}
+//       />
+//     </Form.Item>
+
+//     <Form.Item
+//     placeholder="input password"
+//       name="password"
+//       rules={[{required: true, message: 'Please input your password!'}]}
+//     >
+//       <Input.Password 
+//         placeholder="Password"
+//         name="password"
+//         value={loginData.password}
+//         onChange={(event)=> setPassword(event.target.value)}
+//       />
+//     </Form.Item>
+
+//     {error.length > 0 && (
+//                           <ul style={{color:"red"}}className="fs-5">
+//                               {error.map(error => <li key={error}>{error}</li>)}
+//                           </ul>
+//                       )}
+
+//     <Form.Item>
+//       <Button type="submit" className="login-form-button" onClick={handleSubmit}>
+//         LOGIN
+//         {/* <Link 
+//         // href="/"
+//         > LOGIN</Link> */}
+//       </Button>
+//     </Form.Item>
+//     <p>If you dont have an account?<Link href="/signup"> Click me!</Link></p>
+//   </Form>
+// {/* </Col> */}
+// </div>
+// </div>
+

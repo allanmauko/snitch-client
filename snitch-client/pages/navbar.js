@@ -1,58 +1,61 @@
-import Image from 'next/image';
+import { useEffect, useState } from "react";
 import Link from "next/link";
-// import {faFacebook,} from "@fortawesome/free-solid-svg-icons"
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-
 
 function Navbar() {
-  const myLoader = ({ src, width, quality }) => {
-    return `https://example.com/${src}?w=${width}&q=${quality || 75}`
-  }
-  const user = true;
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    // Perform localStorage action
+    let value = localStorage.getItem("isLoggedIn");
+   alert(value);
+    if (value) {
+      setIsLoggedIn(true);
+    }else{
+      setIsLoggedIn(false);
+    }
+    console.log(localStorage.getItem("isLoggedIn"));
+  }, []);
+
   return (
     <div className="top">
       <div className="topLeft">
-        {/* <FontAwesomeIcon icon={faFacebook} /> */}
         <i className="topIcon fab fa-instagram-square"></i>
-        <i className="topIcon fab fa-pinterest-square"></i>
-        <i className="topIcon fab fa-twitter-square"></i>
         <h1>Snitch</h1>
       </div>
-      <div className="topCenter">
-        <ul className="topList">
-          <li className="topListItem ">
-            <Link href="/">
-              <a>HOME</a>
-            </Link>
-          </li>
-          <li className="topListItem">
-            <Link href="/blog">BLOG</Link>
-          </li>
-          {user && <li className="topListItem">LOGOUT</li>}
-        </ul>
-      </div>
-      <div className="topRight">
-        {user ? (
-          <Link href="/settings">
-            <Image
-              loader={myLoader}
-              src="https://img.huffingtonpost.com/asset/5cd367c02300003000b78bae.jpeg?ops=1778_1000"
-              alt="Picture of the author"
-              width={100}
-              height={100}
-            />
-          </Link>
-        ) : (
+      {/* if user is logged in , show the loggedin data */}
+      {isLoggedIn ? (
+        <div className="topCenter">
           <ul className="topList">
-            <li className="topListItem">
-              <Link href="/login">LOGIN</Link>
+            <li className="topListItem ">
+              <Link href="/">
+                <a>Home</a>
+              </Link>
             </li>
             <li className="topListItem">
-              <Link href="/register">REGISTER</Link>
+              <Link href="/blog">Blogs</Link>
+            </li>
+            <li className="topListItem">
+              <Link href="/contactUs">Contact Us</Link>
+            </li>
+            <li className="topListItem">
+              <Link href="/logout">Logout</Link>
             </li>
           </ul>
-        )}
-      </div>
+        </div>
+      ) : (
+        <div className="topRight">
+          <li className="topListItem ">
+            <Link href="/">Home</Link>
+          </li>
+          <ul className="topList">
+            <li className="topListItem">
+              <Link href="/login">Login</Link>
+            </li>
+            <li className="topListItem">
+              <Link href="/signup">Sign Up</Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </div>
   );
 }
