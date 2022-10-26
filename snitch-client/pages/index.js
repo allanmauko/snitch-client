@@ -8,8 +8,9 @@ export default function Home() {
     <div className={styles.container}>
       
       <Head>
-        <App/>
+        <title>React</title>
       </Head>
+      <App />
       <main className={styles.main}>
       
       </main>

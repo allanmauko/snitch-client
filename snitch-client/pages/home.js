@@ -11,22 +11,24 @@ import Articles from "./articles";
 
 function App() {
 
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     setLoading(true)
-    fetch("https://course-api.com/react-tours-project")
+    fetch('https://course-api.com/react-tours-project')
     .then(res => res.json())
     .then(data => {
       setLoading(false)
-      setTours(data)
+      setArticles(data)
     })
     .catch(error => {
       setLoading(false)
       console.log(error)
     })
   }, [])
+
+  console.log(articles)
 
   if(loading){
     return (
@@ -45,9 +47,9 @@ function App() {
           <About />
           <ArticleCard />
           <Footer />
-          <Articles articles={articles} />
+          <Articles articles={articles}/>
         
     </div>
   );
 }
-export default  App;
+export default App;
