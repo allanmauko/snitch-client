@@ -51,8 +51,8 @@ function UserSignUp() {
         });
         // after successful sign up then login
         successAlert.then(function () {
-          sessionStorage.setItem("user_id", JSON.stringify(user.id))
-          window.location = "/login";
+          // sessionStorage.setItem("user_id", JSON.stringify(user.id))
+          window.location = "/userLogin";
         });
       })
       .catch((err) => {
@@ -65,7 +65,7 @@ function UserSignUp() {
         });
         // after alert reload page
         failAlert.then(function () {
-          window.location = "/signup";
+          window.location = "/userSignUp";
         });
       });
   }

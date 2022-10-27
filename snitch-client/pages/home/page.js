@@ -7,10 +7,10 @@ import Team from '../../sections/team';
 import Footer from '../../sections/footer';
 // import UserSignUp from '../userSignUp';
 
-const Page = ({currentUser, setCurrentUser}) => {
+const Page = () => {
   return (
       <div>
-        <Header setCurrentUser={setCurrentUser} currentUser={currentUser}/>
+        <Header />
         {/* <UserSignUp/> */}
         <Banner />
         <About />

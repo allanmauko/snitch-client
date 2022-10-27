@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import AppContext from "../components/AppContext";
 import Header from "../components/header/header";
 // import { useNavigate } from "react-router-dom";
 import Router from "next/router";
 
-function UserLogin({setCurrentUser}) {
+function UserLogin({ setCurrentUser }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
   // const navigate = useNavigate();
+  const context = useContext(AppContext);
 
   // get csrf token
   function getCSRFToken() {
@@ -19,7 +21,7 @@ function UserLogin({setCurrentUser}) {
     fetch("http://127.0.0.1:3000/login", {
       method: "POST",
       headers: {
-        "CSRF-Token": getCSRFToken(),
+        "X-CSRF-Token": getCSRFToken(),
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
@@ -29,7 +31,7 @@ function UserLogin({setCurrentUser}) {
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          setCurrentUser(user);
+          context.setCurrentUser(user);
           console.log(user);
           Router.push("/");
         });

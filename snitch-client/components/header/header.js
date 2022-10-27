@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import Link from "next/link";
-import UserProfile from "../../pages/userProfile";
+import Image from "next/image";
+import AppContext from "../AppContext";
 
-const Header = ({ currentUser, setCurrentUser }) => {
+const Header = () => {
+  let context = useContext(AppContext);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -33,27 +35,57 @@ const Header = ({ currentUser, setCurrentUser }) => {
                   About
                 </Link>
               </li>
-              {currentUser ? (
+              {context.currentUser ? (
                 <>
                   <li className="nav-item">
                     <Link className="nav-link" href="#services">
                       Blogs
                     </Link>
                   </li>
-                  <li className="nav-item">
-                    <UserProfile />
+                  <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link dropdown-toggle d-flex align-items-center"
+                      href=""
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="true"
+                    >
+                      <Image
+                        src="/images/avatar.jpg"
+                        className="rounded-circle"
+                        height={30}
+                        alt="Avatar"
+                        // loading="lazy"
+                        width={30}
+                      />
+                    </Link>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          My profile
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          Settings
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          Logout
+                        </Link>
+                      </li>
+                    </ul>
                   </li>
                 </>
               ) : (
                 <>
                   <li className="nav-item">
-                    <Link
-                      className="nav-link"
-                      href={{
-                        pathname: "./userLogin",
-                        query: { setCurrentUser: setCurrentUser }
-                      }}
-                    >
+                    <Link className="nav-link" href="./userLogin">
                       Login
                     </Link>
                   </li>
