@@ -1,5 +1,5 @@
 
-export default function UserProfile() {
+export default function UserProfile({styles}) {
   return ( 
 <div class="container emp-profile">
             <form method="post">
@@ -16,7 +16,7 @@ export default function UserProfile() {
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Rogony
+                                         Daryl Rogony
                                     </h5>
                                     <h6>
                                         Web Developer
@@ -29,7 +29,8 @@ export default function UserProfile() {
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <button type="button" class="btn btn-primary">Logout</button>
+                        {/* <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/> */}
                     </div>
                 </div>
                 <div class="row">
