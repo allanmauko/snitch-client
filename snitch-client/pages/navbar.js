@@ -26,7 +26,7 @@ function Navbar() {
             </Link>
           </li>
           <li className="topListItem">
-            <Link href="/blog">BLOG</Link>
+            <Link href="/blogForm">BLOG</Link>
           </li>
           {user && <li className="topListItem">LOGOUT</li>}
         </ul>

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import Link from "next/link";
 
-function Article({ id, name, info, image, removeArticle }) {
+
+function Article({ id, title, blogItem, imageURL, removeArticle }) {
 
   const [seeMore, setSeeMore] = useState(false);
   
@@ -24,42 +26,26 @@ function Article({ id, name, info, image, removeArticle }) {
     //   </div>  
    
     // </div>
-  <>
+  <div className="articles-page" style={{width: "200%",
+  margin: "auto", paddingLeft: "275px"}}>
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
-      <img src={image} class="card-img-top" alt="..."/>
+      <img src={imageURL} class="card-img-top" alt="..."/>
       <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
+        <h5 class="card-title">{title}</h5>
+        <p class="card-text">{seeMore ? blogItem : `${blogItem.substring(0, 200)}`}</p>
         <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
         <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src={image} class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
-        <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
-        <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button></div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src={image} class="card-img-top" alt="..."/>
-      <div class="card-body">
-        <h5 class="card-title">{name}</h5>
-        <p class="card-text">{seeMore ? info : `${info.substring(0, 200)}`}</p>
-        <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
-        <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
-      </div>
+      
+        {/* <Link href="/update">
+            <button className="btn-update" onClick={() => setID(data.id)}>Update Blog</button>
+            </Link> */}
+            </div>
     </div>
   </div>
 </div>
-</>
+</div>
   );
 }
 
