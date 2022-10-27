@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-import Header from "../../components/header/header";
+// import Header from "../../components/header/header";
 // import Link from "next/link";
 
-function SignUp() {
+function UserSignUp() {
   // Declaring the initials
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -147,4 +147,4 @@ function SignUp() {
   );
 }
 
-export default SignUp;
+export default UserSignUp;

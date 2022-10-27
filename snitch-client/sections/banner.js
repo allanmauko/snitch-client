@@ -22,7 +22,7 @@ const Banner = () => {
               <img alt="..." className="d-block w-100" src="https://images.unsplash.com/photo-1661956601031-4cf09efadfce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"/>
                 <div className="carousel-caption">
                   <h5>Write With Us!</h5>
-                  <p>Deepen readers' understanding of the world and to
+                  <p>Deepen readers understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
                   {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
                   </p> */}
@@ -32,7 +32,7 @@ const Banner = () => {
               <img alt="..." className="d-block w-100" src="https://images.unsplash.com/photo-1661956600684-97d3a4320e45?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"/>
                 <div className="carousel-caption">
                   <h5>Authenticity</h5>
-                  <p>Deepen readers' understanding of the world and to
+                  <p>Deepen readers understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
                   {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
                   </p> */}
@@ -42,7 +42,7 @@ const Banner = () => {
               <img alt="..." className="d-block w-100" src="https://images.unsplash.com/photo-1661956601031-4cf09efadfce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1476&q=80"/>
                 <div className="carousel-caption">
                   <h5>True Champions</h5>
-                  <p>Deepen readers' understanding of the world and to
+                  <p>Deepen readers understanding of the world and to
                     empower writers to share their best work and biggest ideas.</p>
                   {/* <p><a className="btn btn-warning mt-3" href="#">Learn More</a>
                   </p> */}

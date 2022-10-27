@@ -1,32 +1,40 @@
 import React, { useState } from "react";
-import Header from "../../components/header/header";
+import Header from "../components/header/header";
 // import { useNavigate } from "react-router-dom";
+import Router from "next/router";
 
-function Login({ setUser }) {
+function UserLogin({setCurrentUser}) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
+  // const navigate = useNavigate();
+
+  // get csrf token
+  function getCSRFToken() {
+    return decodeURI(document.cookie.split("=")[1]);
+  }
 
   function handleUserSubmit(e) {
     e.preventDefault();
     fetch("http://127.0.0.1:3000/login", {
       method: "POST",
       headers: {
+        "CSRF-Token": getCSRFToken(),
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        email,
-        password
+        email: email,
+        password: password
       })
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          setUser(user);
+          setCurrentUser(user);
           console.log(user);
+          Router.push("/");
         });
-        window.location = "/";
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => console.log(err));
       }
     });
   }
@@ -44,7 +52,7 @@ function Login({ setUser }) {
 
           <form className="form-content">
             <div className="input-wrapper">
-              <label htmlFor="username" className="text-l ">
+              <label htmlFor="username" className="text-l">
                 Email:
               </label>
               <input
@@ -80,13 +88,13 @@ function Login({ setUser }) {
                   </div>;
                 })}
                 <span className="form-control-focus"></span>
-                <div
+                {/* <div
                   className="input-group-addon"
                   onClick="passwordVisibility();"
                 >
                   <i className="fa fa-eye" id="showPass"></i>
                   <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -111,4 +119,4 @@ function Login({ setUser }) {
   );
 }
 
-export default Login;
+export default UserLogin;
