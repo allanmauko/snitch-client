@@ -31,11 +31,14 @@ const Header = () => {
                   <a className="nav-link" href="#team">Team</a>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="./login/login">Login</Link>
+                  <Link className="nav-link" href="./login">Login</Link>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" href="./signup/signup">Register</Link>
+                  <Link className="nav-link" href="./signup">Register</Link>
                 </li>
+                 {/* <li className="nav-item">
+                  <Link className="nav-link" href="./userProfile">MyProfile</Link>
+                </li> */}
               </ul>
             </div>
           </div>
