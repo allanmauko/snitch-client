@@ -51,13 +51,13 @@ const Header = () => {
                     aria-expanded="false"
                     aria-label="Toggle navigation"
                   >
-                    <span class="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon"></span>
                   </button>
                   <div className="collapse navbar-collapse" id="navbar-list-4">
-                    <ul class="navbar-nav">
-                      <li class="nav-item dropdown">
+                    <ul className="navbar-nav">
+                      <li className="nav-item dropdown">
                         <a
-                          class="nav-link dropdown-toggle"
+                          className="nav-link dropdown-toggle"
                           href="#"
                           id="navbarDropdownMenuLink"
                           role="button"
@@ -69,20 +69,20 @@ const Header = () => {
                             src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
                             width="40"
                             height="40"
-                            class="rounded-circle"
+                            className="rounded-circle"
                           />
                         </a>
                         <div
-                          class="dropdown-menu"
+                          className="dropdown-menu"
                           aria-labelledby="navbarDropdownMenuLink"
                         >
-                          <a class="dropdown-item" href="#">
+                          <a className="dropdown-item" href="#">
                             Dashboard
                           </a>
-                          <a class="dropdown-item" href="#">
+                          <a className="dropdown-item" href="#">
                             Edit Profile
                           </a>
-                          <a class="dropdown-item" href="#">
+                          <a className="dropdown-item" href="#">
                             Log Out
                           </a>
                         </div>
