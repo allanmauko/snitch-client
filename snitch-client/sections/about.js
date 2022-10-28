@@ -13,7 +13,7 @@ const About = () => {
             </div>
             <div className="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
               <div className="about-text">
-                <h2>We Provide the Best Quality <br/>
+                <h2>We Provide The Best Educative <br/>
                   Blogging Platform</h2>
                 <p>In a world where we are increasingly connected online,
                   blogging provides an important way to connect with others. The
@@ -22,8 +22,9 @@ const About = () => {
                   share similar interests, and they promote open dialogue and
                   the exchange of ideas. It can also be a useful tool for
                   marketing and branding as strong blogs can reach a large
-                  audience and build a loyal following.</p><a
-                  className="btn btn-warning" href="#">Learn More</a>
+                  audience and build a loyal following.</p>
+                  {/* <a
+                  className="btn btn-warning" href="#">Learn More</a> */}
               </div>
             </div>
           </div>
