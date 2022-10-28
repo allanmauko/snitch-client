@@ -1,46 +1,106 @@
-import React from 'react';
-import Link from 'next/link';
+import React, { useContext } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import AppContext from "../AppContext";
 
 const Header = () => {
+  let context = useContext(AppContext);
   return (
-      <>
-        <nav
-            className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-          <div className="container">
-            <a className="navbar-brand" href="#"><span
-                className="text-warning">Build</span>Con</a>
-            <button aria-controls="navbarSupportedContent" aria-expanded="false"
-                    aria-label="Toggle navigation" className="navbar-toggler"
-                    data-bs-target="#navbarSupportedContent"
-                    data-bs-toggle="collapse"
-                    type="button"><span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse"
-                 id="navbarSupportedContent">
-              <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li className="nav-item">
-                  <a className="nav-link" href="#">Home</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#about">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#services">Blogs</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" href="#team">Team</a>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="./login/login">Login</Link>
-                </li>
-                <li className="nav-item">
-                  <Link className="nav-link" href="./signup/signup">Register</Link>
-                </li>
-              </ul>
-            </div>
+    <>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div className="container">
+          <a className="navbar-brand" href="#">
+            <span className="text-warning">Build</span>Con
+          </a>
+          <button
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+            className="navbar-toggler"
+            data-bs-target="#navbarSupportedContent"
+            data-bs-toggle="collapse"
+            type="button"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li className="nav-item">
+                <Link className="nav-link" href="/">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="#about">
+                  About
+                </Link>
+              </li>
+              {context.currentUser ? (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="#services">
+                      Blogs
+                    </Link>
+                  </li>
+                  <li className="nav-item dropdown">
+                    <Link
+                      className="nav-link dropdown-toggle d-flex align-items-center"
+                      href=""
+                      id="navbarDropdownMenuLink"
+                      role="button"
+                      data-mdb-toggle="dropdown"
+                      aria-expanded="true"
+                    >
+                      <Image
+                        src="/images/avatar.jpg"
+                        className="rounded-circle"
+                        height={30}
+                        alt="Avatar"
+                        // loading="lazy"
+                        width={30}
+                      />
+                    </Link>
+                    <ul
+                      className="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          My profile
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          Settings
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          Logout
+                        </Link>
+                      </li>
+                    </ul>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="./userLogin">
+                      Login
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="./userSignUp">
+                      Create Account
+                    </Link>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
-        </nav>
-      </>
+        </div>
+      </nav>
+    </>
   );
 };
 
