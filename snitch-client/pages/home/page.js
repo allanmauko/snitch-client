@@ -16,6 +16,7 @@ const Page = () => {
         <Team/>
         <Footer/>
       </div>
+
   );
 };
 

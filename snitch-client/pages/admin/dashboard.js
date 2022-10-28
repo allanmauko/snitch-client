@@ -1,11 +1,11 @@
 import React from 'react';
 
-const CreateArticle = () => {
+const Dashboard = () => {
   return (
       <div>
-        
+        testing admin
       </div>
   );
 };
 
-export default CreateArticle;
+export default Dashboard;
