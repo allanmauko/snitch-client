@@ -42,45 +42,50 @@ const Header = () => {
                       Blogs
                     </Link>
                   </li>
-                  <div class="container-fluid">
+                  <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbar-list-4"
+                    aria-controls="navbarNav"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                  >
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+                  <div className="collapse navbar-collapse" id="navbar-list-4">
                     <ul class="navbar-nav">
                       <li class="nav-item dropdown">
                         <a
-                          class="nav-link dropdown-toggle d-flex align-items-center"
+                          class="nav-link dropdown-toggle"
                           href="#"
                           id="navbarDropdownMenuLink"
                           role="button"
-                          data-mdb-toggle="dropdown"
+                          data-toggle="dropdown"
+                          aria-haspopup="true"
                           aria-expanded="false"
                         >
                           <img
-                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
+                            width="40"
+                            height="40"
                             class="rounded-circle"
-                            height="22"
-                            alt="Avatar"
-                            loading="lazy"
                           />
                         </a>
-                        <ul
+                        <div
                           class="dropdown-menu"
                           aria-labelledby="navbarDropdownMenuLink"
                         >
-                          <li>
-                            <a class="dropdown-item" href="#">
-                              My profile
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">
-                              Settings
-                            </a>
-                          </li>
-                          <li>
-                            <a class="dropdown-item" href="#">
-                              Logout
-                            </a>
-                          </li>
-                        </ul>
+                          <a class="dropdown-item" href="#">
+                            Dashboard
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Edit Profile
+                          </a>
+                          <a class="dropdown-item" href="#">
+                            Log Out
+                          </a>
+                        </div>
                       </li>
                     </ul>
                   </div>
