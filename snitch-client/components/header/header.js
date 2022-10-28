@@ -42,45 +42,48 @@ const Header = () => {
                       Blogs
                     </Link>
                   </li>
-                  <li className="nav-item dropdown">
-                    <Link
-                      className="nav-link dropdown-toggle d-flex align-items-center"
-                      href=""
-                      id="navbarDropdownMenuLink"
-                      role="button"
-                      data-mdb-toggle="dropdown"
-                      aria-expanded="true"
-                    >
-                      <Image
-                        src="/images/avatar.jpg"
-                        className="rounded-circle"
-                        height={30}
-                        alt="Avatar"
-                        // loading="lazy"
-                        width={30}
-                      />
-                    </Link>
-                    <ul
-                      className="dropdown-menu"
-                      aria-labelledby="navbarDropdownMenuLink"
-                    >
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          My profile
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          Settings
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          Logout
-                        </Link>
+                  <div class="container-fluid">
+                    <ul class="navbar-nav">
+                      <li class="nav-item dropdown">
+                        <a
+                          class="nav-link dropdown-toggle d-flex align-items-center"
+                          href="#"
+                          id="navbarDropdownMenuLink"
+                          role="button"
+                          data-mdb-toggle="dropdown"
+                          aria-expanded="false"
+                        >
+                          <img
+                            src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp"
+                            class="rounded-circle"
+                            height="22"
+                            alt="Avatar"
+                            loading="lazy"
+                          />
+                        </a>
+                        <ul
+                          class="dropdown-menu"
+                          aria-labelledby="navbarDropdownMenuLink"
+                        >
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              My profile
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Settings
+                            </a>
+                          </li>
+                          <li>
+                            <a class="dropdown-item" href="#">
+                              Logout
+                            </a>
+                          </li>
+                        </ul>
                       </li>
                     </ul>
-                  </li>
+                  </div>
                 </>
               ) : (
                 <>
