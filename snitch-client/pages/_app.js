@@ -2,6 +2,7 @@ import "../styles/globals.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { useState } from "react";
 import AppContext from "../components/AppContext";
+import '../styles/admin.css'
 
 function MyApp({ Component, pageProps }) {
   const [currentUser, setCurrentUser] = useState();
