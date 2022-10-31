@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from 'react';
 import Header from '../../components/header/header';
 import Banner from '../../sections/banner';
 import About from '../../sections/about';
-import Services from '../../sections/services';
+// import Services from '../../sections/services';
 import Team from '../../sections/team';
 import Footer from '../../sections/footer';
 import Loading from '../../components/articles/Loading';
@@ -19,7 +19,7 @@ const context = useContext(AppContext)
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://buildcon.herokuapp.com/articles')
+    fetch('http://127.0.0.1:3000/articles')
     .then(res => res.json())
     .then(data => {
       setLoading(false)

@@ -5,14 +5,12 @@ import Button from 'react-bootstrap/Button';
 import Router from 'next/router';
 
 
-
-
 function BlogForm() {
 
   const [image_url, setImageURL] = useState("");
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
-  const [number_of_likes, setNumberOfLikes] = useState()
+  const [number_of_likes, setNumberOfLikes] = useState("")
   // const [category_id, setCategoryId] = useState(3)
   // const [user_id, setUserId] = useState(3)
 
@@ -20,7 +18,7 @@ function BlogForm() {
 
 const handlePublishBlog = (e) => {
   e.preventDefault();
-  fetch('https://buildcon.herokuapp.com/articles', {
+  fetch('http://127.0.0.1:3000/articles', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
@@ -29,10 +27,10 @@ const handlePublishBlog = (e) => {
     image_url,
     title,
     value,
-    number_of_likes,
+    number_of_likes
 }),
 })
-  .then((response) => response.json())
+  .then((response) => response.text())
   .then((data) => {
     console.log('Success:', data);
     Router.push("/")
