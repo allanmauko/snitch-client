@@ -1,5 +1,5 @@
 import { useState } from "react";
-// import Link from "next/link";
+import Link from "next/link";
 
 
 function Article({ id, title, value, image_url, removeArticle }) {
@@ -44,6 +44,9 @@ function Article({ id, title, value, image_url, removeArticle }) {
         <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
       
             {/* <button className="btn-update btn btn-danger" onClick={handleDeleteBlog}>Delete Blog</button> */}
+            <button className="btn-update btn btn-success" style={{color: "black"}}>
+                <Link href="/updateArticle" >Update Blog</Link>
+              </button>
             </div>
     </div>
   </div>
