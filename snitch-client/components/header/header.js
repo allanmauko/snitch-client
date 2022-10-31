@@ -38,7 +38,7 @@ const Header = () => {
               {context.currentUser ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" href="#services">
+                    <Link className="nav-link" href="./BlogForm">
                       Blogs
                     </Link>
                   </li>

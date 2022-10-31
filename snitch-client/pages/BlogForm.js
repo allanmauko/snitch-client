@@ -9,23 +9,29 @@ import Router from 'next/router';
 
 function BlogForm() {
 
-  const [imageURL, setImageURL] = useState("");
+  const [image_url, setImageURL] = useState("");
   const [title, setTitle] = useState("");
-  const [blogItem, setBlogItem] = useState("");
+  const [value, setValue] = useState("");
+  const [number_of_likes, setNumberOfLikes] = useState(3)
+  const [category_id, setCategoryId] = useState(3)
+  const [user_id, setUserId] = useState(3)
 
 // const navigate = useNavigate();
 
 const handlePublishBlog = (e) => {
   e.preventDefault();
-  fetch('https://635aa5516f97ae73a632efe8.mockapi.io/blogs', {
+  fetch('https://buildcon.herokuapp.com/articles', {
   method: 'POST',
   headers: {
     'Content-Type': 'application/json',
   },
   body: JSON.stringify({
-    imageURL,
+    image_url,
     title,
-    blogItem
+    value,
+    number_of_likes,
+    user_id,
+    category_id
 }),
 })
   .then((response) => response.json())
@@ -55,7 +61,7 @@ const handlePublishBlog = (e) => {
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Blog</Form.Label>
-        <Form.Control as="textarea" rows={15} placeholder="Technology is the way of the future....." onChange={(e) => setBlogItem(e.target.value)} />
+        <Form.Control as="textarea" rows={15} placeholder="Technology is the way of the future....." onChange={(e) => setValue(e.target.value)} />
       </Form.Group>
     </Form>
     <Button variant="success" onClick={handlePublishBlog} >Publish Blog</Button>

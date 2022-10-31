@@ -18,7 +18,7 @@ function UserLogin({ setCurrentUser }) {
 
   function handleUserSubmit(e) {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("https://buildcon.herokuapp.com/login", {
       method: "POST",
       headers: {
         "X-CSRF-Token": getCSRFToken(),
