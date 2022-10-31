@@ -19,7 +19,7 @@ function AdminLogin({ setCurrentUser }) {
 
   function handleUserSubmit(e) {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/login", {
+    fetch("https://buildcon.herokuapp.com/admin_login", {
       method: "POST",
       headers: {
         "X-CSRF-Token": getCSRFToken(),
@@ -34,7 +34,7 @@ function AdminLogin({ setCurrentUser }) {
         r.json().then((user) => {
           context.setCurrentUser(user);
           console.log(user);
-          Router.push("/");
+          Router.push("/admin");
         });
       } else {
         r.json().then((err) => console.log(err));
@@ -49,7 +49,7 @@ function AdminLogin({ setCurrentUser }) {
         <div className="form-wrapper">
           <div className="form-header">
             <span className="form-title">
-              Welcome Back To <strong>BuildCon</strong>
+              You're The Admin <strong>BuildCon</strong>
             </span>
           </div>
 
@@ -91,13 +91,6 @@ function AdminLogin({ setCurrentUser }) {
                   </div>;
                 })}
                 <span className="form-control-focus"></span>
-                {/* <div
-                  className="input-group-addon"
-                  onClick="passwordVisibility();"
-                >
-                  <i className="fa fa-eye" id="showPass"></i>
-                  <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                </div> */}
               </div>
             </div>
 
@@ -111,7 +104,7 @@ function AdminLogin({ setCurrentUser }) {
 
             <p className="txt-style1 mt-5">
               Not a member yet?{" "}
-              <Link className="txt-style2" href="/userSignUp">
+              <Link className="txt-style2" href="/adminSignUp">
                 <strong>Create Account</strong>
               </Link>
             </p>
