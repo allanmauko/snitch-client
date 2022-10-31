@@ -3,18 +3,31 @@ import Script from "next/script";
 import { useState } from "react";
 import Page from "./home/page";
 
-
 export default function Home() {
   const [currentUser, setCurrentUser] = useState(null);
   return (
     <div>
       <Head>
-        <title>BuildCon</title>
+        <title>
+          BuildCon
+          <div>
+            <form action="#">
+              <label className="switch">
+                <input type="checkbox" />
+                <span className="slider"></span>
+              </label>
+            </form>
+          </div>
+        </title>
+        <section>
+          <div className="hero-section">
+            <h1>👋 welcome BuildCon</h1>
+          </div>
+        </section>
         <link
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css"
           rel="stylesheet"
         />
-
         <link rel="icon" href="/pro.ico" />
       </Head>
       <Script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></Script>
@@ -25,7 +38,6 @@ export default function Home() {
       ></Script>
 
       <Page setCurrentUser={setCurrentUser} currentUser={currentUser} />
-    
     </div>
   );
 }

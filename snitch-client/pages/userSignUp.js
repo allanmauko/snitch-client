@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
-// import Header from "../../components/header/header";
-// import Link from "next/link";
+import Header from "../components/header/header";
+import Link from "next/link";
 
 function UserSignUp() {
   // Declaring the initials
@@ -71,79 +71,91 @@ function UserSignUp() {
   }
 
   return (
-    <div className="container border-dark rounded mb-3 mt-5 justify-content-centre">
-      <form
-        onSubmit={handleSubmit}
-        className="card text-dark mb-3"
-        style={{ backgroundColor: "#BD9FF9", maxWidth: "35rem" }}
-      >
-        <h4 className="card-header">Welcome to Snitch</h4>
-        <div className="card-body">
-          <fieldset>
-            <div className="form-group">
-              <label htmlFor="userName" className="form-label mt-4">
-                Username:
-              </label>
+    <>
+      <Header />
+      <div className="form-main-container">
+        <div className="form-wrapper">
+          <div className="form-header">
+            <span className="form-title">
+            👋 Welcome to <strong>Build Con</strong>
+            </span>
+          </div>
+
+          <form className="form-content">
+            <div className="input-wrapper">
               <input
-                type="name"
-                className="form-control"
-                id="userName"
-                value={username}
-                placeholder="username"
-                onChange={(e) => setUsername(e.target.value)}
+                className="input-style"
+                type="text"
+                name="username"
+                placeholder="Username"
+                required
               />
+              <span className="input-style-focus"></span>
             </div>
-            <div className="form-group">
-              <label htmlFor="userEmail" className="form-label mt-4">
-                Email:
-              </label>
+            <div className="input-wrapper">
               <input
+                className="input-style"
                 type="email"
-                className="form-control"
-                id="userEmail"
-                value={email}
+                name="email"
                 placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
+                required
               />
+              <span className="input-style-focus"></span>
+            </div>
+            <div className="input-wrapper">
+              <div className="input-group">
+                <input
+                  className="form-control"
+                  type="password"
+                  placeholder="Password"
+                  id="password"
+                  required
+                />
+                <span className="form-control-focus"></span>
+                <div
+                  className="input-group-addon"
+                  onClick="passwordVisibility();"
+                >
+                  <i className="fa fa-eye" id="showPass"></i>
+                  <i className="fa fa-eye-slash d-none" id="hidePass"></i>
+                </div>
+              </div>
             </div>
 
-            <div className="form-group">
-              <label htmlFor="userPassword" className="form-label mt-4">
-                Password:
-              </label>
+            <div className="input-wrapper">
               <input
                 className="form-control"
                 type="password"
-                id="password"
-                value={password}
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-                autoComplete="current-password"
+                placeholder="Repeat Password"
+                id="repeatPassword"
+                required
               />
+              <span className="input-style-focus"></span>
             </div>
-            <div className="form-group">
-              <label htmlFor="userConfirmPassword" className="form-label mt-4">
-                Confirm-Password:
-              </label>
+
+            <div className="checkbox-wrapper mt-4">
               <input
-                type="password"
-                className="form-control"
-                id="userPassword"
-                value={passwordConfirm}
-                placeholder="re-enter Password"
-                onChange={(e) => setPasswordConfirm(e.target.value)}
+                type="checkbox"
+                className="checkbox-style"
+                id="checkbox"
+                name="remember-me"
+                required
               />
+           
             </div>
-            <div className="d-grid mt-3 d-flex justify-content-center">
-              <button className="btn btn-warning text-nowrap" type="submit">
-                Sign Up
-              </button>
-              {/* <!-- Register buttons --> */}
-            </div>
-          </fieldset>
+
+            <button className="button-style w-100">Sign Up</button>
+
+            <p className="txt-style1 mt-5">
+              Already a member?{" "}
+              <Link className="txt-style2" href="/userLogin">
+                <strong>Login!</strong>
+              </Link>
+            </p>
+          </form>
         </div>
-      </form>
-    </div>
+      </div>
+    </>
   );
 }
 

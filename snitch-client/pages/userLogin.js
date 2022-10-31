@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 import AppContext from "../components/AppContext";
 import Header from "../components/header/header";
+import Link from "next/link";
 // import { useNavigate } from "react-router-dom";
 import Router from "next/router";
 
@@ -48,7 +49,7 @@ function UserLogin({ setCurrentUser }) {
         <div className="form-wrapper">
           <div className="form-header">
             <span className="form-title">
-              Login to <strong>BuildCon</strong>
+              Welcome Back To <strong>BuildCon</strong>
             </span>
           </div>
 
@@ -110,9 +111,9 @@ function UserLogin({ setCurrentUser }) {
 
             <p className="txt-style1 mt-5">
               Not a member yet?{" "}
-              <a className="txt-style2" href="/signup">
-                <strong>Sign Up</strong>
-              </a>
+              <Link className="txt-style2" href="/userSignUp">
+                <strong>Create Account</strong>
+              </Link>
             </p>
           </form>
         </div>
