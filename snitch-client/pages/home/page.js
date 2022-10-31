@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Header from '../../components/header/header';
 import Banner from '../../sections/banner';
 import About from '../../sections/about';
-// import Services from '../../sections/services';
+import Services from '../../sections/services';
 import Team from '../../sections/team';
 import Footer from '../../sections/footer';
 import Loading from '../../components/articles/Loading';
@@ -50,8 +50,8 @@ const Page = () => {
         {/* <UserSignUp/> */}
         <Banner />
         <About />
-        {/* <Services/> */}
-        <Articles articles={articles} removeArticle={removeArticle} />
+        <Services/>
+        {/* <Articles articles={articles} removeArticle={removeArticle} /> */}
         <Team/>
         <Footer/>
       </div>
