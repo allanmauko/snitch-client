@@ -3,16 +3,15 @@ import Link from "next/link";
 import Image from "next/image";
 import AppContext from "../AppContext";
 
-
 const Header = () => {
   let context = useContext(AppContext);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="/">
+          <Link className="navbar-brand" href="/">
             <span className="text-warning">Build</span>Con
-          </a>
+          </Link>
           <button
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -49,43 +48,45 @@ const Header = () => {
                     </Link>
                   </li>
 
-
                   <div className="dropdown">
-                    <button className="btn dropdown-toggle"
-                            type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                    <button
+                      className="btn dropdown-toggle"
+                      type="button"
+                      id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown"
+                      aria-expanded="false"
+                    >
                       <Image
-                            src="/images/avatar.jpg"
-                            className="rounded-circle"
-                            height={30}
-                            alt="Avatar"
-                            // loading="lazy"
-                            width={30}
-                          />
+                        src="/images/avatar.jpg"
+                        className="rounded-circle"
+                        height={30}
+                        alt="Avatar"
+                        // loading="lazy"
+                        width={30}
+                      />
                     </button>
 
                     <ul
-                        className="dropdown-menu"
-                        aria-labelledby="navbarDropdownMenuLink"
-                      >
-                        <li>
-                          <Link className="dropdown-item" href="/">
-                            My profile
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="/">
-                            Bookmarks
-                          </Link>
-                        </li>
-                        <li>
-                          <Link className="dropdown-item" href="/">
-                            Logout
-                          </Link>
-                        </li>
-                      </ul>
+                      className="dropdown-menu"
+                      aria-labelledby="navbarDropdownMenuLink"
+                    >
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          My profile
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/">
+                          Bookmarks
+                        </Link>
+                      </li>
+                      <li>
+                        <Link className="dropdown-item" href="/userLogout">
+                          Logout
+                        </Link>
+                      </li>
+                    </ul>
                   </div>
-
                 </>
               ) : (
                 <>
