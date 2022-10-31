@@ -11,8 +11,7 @@ function Articles({articles, removeArticle}) {
         <div>
           {articles.map((article) => {
             return (
-              // <Article key={article.id} {...article} removeArticle={removeArticle} />
-              <Services key={article.id} {...article} removeArticle={removeArticle} />
+              <Article key={article.id} {...article} removeArticle={removeArticle} />
             )
           })}
         </div>

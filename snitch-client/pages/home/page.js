@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import Header from '../../components/header/header';
 import Banner from '../../sections/banner';
 import About from '../../sections/about';
@@ -8,15 +8,18 @@ import Footer from '../../sections/footer';
 import Loading from '../../components/articles/Loading';
 import Articles from '../../components/articles/Articles';
 // import UserSignUp from '../userSignUp';
+import AppContext from '../../components/AppContext';
 
 const Page = () => {
+
+const context = useContext(AppContext)
 
   const [loading, setLoading] = useState(true);
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
     setLoading(true)
-    fetch('https://635aa5516f97ae73a632efe8.mockapi.io/blogs')
+    fetch('https://buildcon.herokuapp.com/articles')
     .then(res => res.json())
     .then(data => {
       setLoading(false)
@@ -50,8 +53,9 @@ const Page = () => {
         {/* <UserSignUp/> */}
         <Banner />
         <About />
-        <Services/>
+        {/* <Services/> */}
         {/* <Articles articles={articles} removeArticle={removeArticle} /> */}
+        {context.currentUser ? <Articles articles={articles} removeArticle={removeArticle} /> : <h1>Kindly login to view blogs!</h1>}
         <Team/>
         <Footer/>
       </div>

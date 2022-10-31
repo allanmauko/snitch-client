@@ -2,7 +2,7 @@ import { useState } from "react";
 // import Link from "next/link";
 
 
-function Article({ id, title, blogItem, imageURL, removeArticle }) {
+function Article({ id, title, value, image_url, removeArticle }) {
 
   const [seeMore, setSeeMore] = useState(false);
   // const [APIData, setAPIData] = useState({});
@@ -36,10 +36,10 @@ function Article({ id, title, blogItem, imageURL, removeArticle }) {
 <div class="row row-cols-1 row-cols-md-3 g-4">
   <div class="col">
     <div class="card">
-      <img src={imageURL} class="card-img-top" alt="..."/>
+      <img src={image_url} class="card-img-top" alt="..."/>
       <div class="card-body">
         <h5 class="card-title">{title}</h5>
-        <p class="card-text">{seeMore ? blogItem : `${blogItem.substring(0, 200)}`}</p>
+        <p class="card-text">{seeMore ? value : `${value.substring(0, 200)}`}</p>
         <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
         <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
       
