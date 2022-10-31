@@ -2,16 +2,15 @@ import React, { useContext } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import AppContext from "../AppContext";
-
 const Header = () => {
   let context = useContext(AppContext);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" href="/">
             <span className="text-warning">Build</span>Con
-          </a>
+          </Link>
           <button
             aria-controls="navbarSupportedContent"
             aria-expanded="false"
@@ -26,7 +25,7 @@ const Header = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link className="nav-link" href="#">
+                <Link className="nav-link" href="/">
                   Home
                 </Link>
               </li>
@@ -38,56 +37,48 @@ const Header = () => {
               {context.currentUser ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" href="#services">
+                    <Link className="nav-link" href="./writeArticle">
+                      Write
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="././writeArticle">
                       Blogs
                     </Link>
                   </li>
-                  <button
-                    className="navbar-toggler"
-                    type="button"
-                    data-toggle="collapse"
-                    data-target="#navbar-list-4"
-                    aria-controls="navbarNav"
-                    aria-expanded="false"
-                    aria-label="Toggle navigation"
-                  >
-                    <span className="navbar-toggler-icon"></span>
-                  </button>
-                  <div className="collapse navbar-collapse" id="navbar-list-4">
-                    <ul className="navbar-nav">
-                      <li className="nav-item dropdown">
-                        <a
-                          className="nav-link dropdown-toggle"
-                          href="#"
-                          id="navbarDropdownMenuLink"
-                          role="button"
-                          data-toggle="dropdown"
-                          aria-haspopup="true"
-                          aria-expanded="false"
-                        >
-                          <img
-                            src="https://s3.eu-central-1.amazonaws.com/bootstrapbaymisc/blog/24_days_bootstrap/fox.jpg"
-                            width="40"
-                            height="40"
+                  <div className="dropdown">
+                    <button className="btn dropdown-toggle"
+                            type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                      <Image
+                            src="/images/avatar.jpg"
                             className="rounded-circle"
+                            height={30}
+                            alt="Avatar"
+                            // loading="lazy"
+                            width={30}
                           />
-                        </a>
-                        <div
-                          className="dropdown-menu"
-                          aria-labelledby="navbarDropdownMenuLink"
-                        >
-                          <a className="dropdown-item" href="#">
-                            Dashboard
-                          </a>
-                          <a className="dropdown-item" href="#">
-                            Edit Profile
-                          </a>
-                          <a className="dropdown-item" href="#">
-                            Log Out
-                          </a>
-                        </div>
-                      </li>
-                    </ul>
+                    </button>
+                    <ul
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                      >
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            My profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            Bookmarks
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
                   </div>
                 </>
               ) : (
@@ -111,5 +102,4 @@ const Header = () => {
     </>
   );
 };
-
 export default Header;

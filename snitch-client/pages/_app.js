@@ -1,6 +1,6 @@
-import "../styles/globals.css";
+import { useState, useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.css";
-import { useState } from "react";
+import "../styles/globals.css";
 import AppContext from "../components/AppContext";
 
 function MyApp({ Component, pageProps }) {
