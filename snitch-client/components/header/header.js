@@ -3,13 +3,14 @@ import Link from "next/link";
 import Image from "next/image";
 import AppContext from "../AppContext";
 
+
 const Header = () => {
   let context = useContext(AppContext);
   return (
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <a className="navbar-brand" href="/">
             <span className="text-warning">Build</span>Con
           </a>
           <button
@@ -38,49 +39,53 @@ const Header = () => {
               {context.currentUser ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" href="#services">
+                    <Link className="nav-link" href="./writeArticle">
+                      Write
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="././writeArticle">
                       Blogs
                     </Link>
                   </li>
-                  <li className="nav-item dropdown">
-                    <Link
-                      className="nav-link dropdown-toggle d-flex align-items-center"
-                      href=""
-                      id="navbarDropdownMenuLink"
-                      role="button"
-                      data-mdb-toggle="dropdown"
-                      aria-expanded="true"
-                    >
+
+
+                  <div className="dropdown">
+                    <button className="btn dropdown-toggle"
+                            type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                       <Image
-                        src="/images/avatar.jpg"
-                        className="rounded-circle"
-                        height={30}
-                        alt="Avatar"
-                        // loading="lazy"
-                        width={30}
-                      />
-                    </Link>
+                            src="/images/avatar.jpg"
+                            className="rounded-circle"
+                            height={30}
+                            alt="Avatar"
+                            // loading="lazy"
+                            width={30}
+                          />
+                    </button>
+
                     <ul
-                      className="dropdown-menu"
-                      aria-labelledby="navbarDropdownMenuLink"
-                    >
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          My profile
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          Settings
-                        </Link>
-                      </li>
-                      <li>
-                        <Link className="dropdown-item" href="/">
-                          Logout
-                        </Link>
-                      </li>
-                    </ul>
-                  </li>
+                        className="dropdown-menu"
+                        aria-labelledby="navbarDropdownMenuLink"
+                      >
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            My profile
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            Bookmarks
+                          </Link>
+                        </li>
+                        <li>
+                          <Link className="dropdown-item" href="/">
+                            Logout
+                          </Link>
+                        </li>
+                      </ul>
+                  </div>
+
                 </>
               ) : (
                 <>
