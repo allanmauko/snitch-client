@@ -5,28 +5,28 @@ import { useState } from "react";
 function Article({ id, title, blogItem, imageURL, removeArticle }) {
 
   const [seeMore, setSeeMore] = useState(false);
-  // const [APIData, setAPIData] = useState([]);
+  const [APIData, setAPIData] = useState({});
 
 
-  // const handleDeleteBlog = (id) => {
-  //   // e.preventDefault();
+  const handleDeleteBlog = (id) => {
+    // e.preventDefault();
     
-  //   fetch(`https://635aa5516f97ae73a632efe8.mockapi.io/blogs/${id}`, {
-  //   method: 'DELETE',
-  //   headers: {
-  //     'Content-Type': 'application/json'
-  //   },
-  //   body: null
-  //   })
-  //   .then(response => {
-  //       return response.json()
-  //   })
-  //   .then(data => 
-  //       // this is the data we get after putting our data, do whatever you want with this data
-  //       console.log(data) 
-  //   );
+    fetch(`https://635aa5516f97ae73a632efe8.mockapi.io/blogs/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: null
+    })
+    .then(response => {
+        return response.json()
+    })
+    .then(data => 
+        // this is the data we get after putting our data, do whatever you want with this data
+        console.log(data) 
+    );
 
-  //   }
+    }
 
 
   
@@ -63,7 +63,7 @@ function Article({ id, title, blogItem, imageURL, removeArticle }) {
         <button class = "btn btn-outline-info btn-sm rounded" onClick={() => setSeeMore(!seeMore)}>{seeMore ? "Read less" : "Read more"}</button>
         <button className='delete-btn btn btn-danger' onClick={()=> {removeArticle(id)}}>Not interested in this Article</button>
       
-            {/* <button className="btn-update btn btn-danger" onClick={handleDeleteBlog}>Delete Blog</button> */}
+            <button className="btn-update btn btn-danger" onClick={handleDeleteBlog}>Delete Blog</button>
             </div>
     </div>
   </div>

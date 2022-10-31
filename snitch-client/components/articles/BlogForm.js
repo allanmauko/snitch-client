@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-// import { useNavigate } from "react-router-dom";
+import Router from 'next/router';
 
 
 
@@ -31,8 +31,7 @@ const handlePublishBlog = (e) => {
   .then((response) => response.json())
   .then((data) => {
     console.log('Success:', data);
-    // navigate("/");
-    <App />
+    Router.push("/")
   })
   .catch((error) => {
     console.error('Error:', error);
