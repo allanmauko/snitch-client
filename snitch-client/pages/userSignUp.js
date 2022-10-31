@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Header from "../components/header/header";
-import Link from "next/link";
+// import Link from "next/link";
 
 function UserSignUp() {
   // Declaring the initials
@@ -71,91 +71,87 @@ function UserSignUp() {
   }
 
   return (
-    <>
-      <Header />
-      <div className="form-main-container">
-        <div className="form-wrapper">
-          <div className="form-header">
-            <span className="form-title">
-            👋 Welcome to <strong>Build Con</strong>
-            </span>
-          </div>
+    <div>
+      <>
+        <Header />
+        <div className="form-main-container">
+          <div className="form-wrapper">
+            <div className="form-header">
+              <span className="form-title">
+                Sign up to <strong>Build Con</strong>
+              </span>
+            </div>
 
-          <form className="form-content">
-            <div className="input-wrapper">
-              <input
-                className="input-style"
-                type="text"
-                name="username"
-                placeholder="Username"
-                required
-              />
-              <span className="input-style-focus"></span>
-            </div>
-            <div className="input-wrapper">
-              <input
-                className="input-style"
-                type="email"
-                name="email"
-                placeholder="Email"
-                required
-              />
-              <span className="input-style-focus"></span>
-            </div>
-            <div className="input-wrapper">
-              <div className="input-group">
+            <form onSubmit={handleSubmit} className="form-content">
+              <div className="form-group"></div>
+              <div className="input-wrapper">
+                <input
+                  className="input-style"
+                  type="name"
+                  value={username}
+                  name="username"
+                  placeholder="Username"
+                  onChange={(e) => setUsername(e.target.value)}
+                  required
+                />
+                <span className="input-style-focus"></span>
+              </div>
+              <div className="input-wrapper">
+                <input
+                  className="input-style"
+                  type="email"
+                  name="email"
+                  value={email}
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <span className="input-style-focus"></span>
+              </div>
+              <div className="input-wrapper">
+                <div className="input-group">
+                  <input
+                    className="form-control"
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                  <span className="form-control-focus"></span>
+                  <div
+                    className="input-group-addon"
+                    onClick="passwordVisibility();"
+                  >
+                    <i className="fa fa-eye" id="showPass"></i>
+                    <i className="fa fa-eye-slash d-none" id="hidePass"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div className="input-wrapper">
                 <input
                   className="form-control"
                   type="password"
-                  placeholder="Password"
-                  id="password"
-                  required
+                  placeholder="Repeat Password"
+                  id="repeatPassword"
+                  onChange={(e) => setPasswordConfirm(e.target.value)}
                 />
-                <span className="form-control-focus"></span>
-                <div
-                  className="input-group-addon"
-                  onClick="passwordVisibility();"
-                >
-                  <i className="fa fa-eye" id="showPass"></i>
-                  <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                </div>
+                <span className="input-style-focus"></span>
               </div>
-            </div>
 
-            <div className="input-wrapper">
-              <input
-                className="form-control"
-                type="password"
-                placeholder="Repeat Password"
-                id="repeatPassword"
-                required
-              />
-              <span className="input-style-focus"></span>
-            </div>
+              <button className="button-style w-100" type="submit">Sign Up</button>
 
-            <div className="checkbox-wrapper mt-4">
-              <input
-                type="checkbox"
-                className="checkbox-style"
-                id="checkbox"
-                name="remember-me"
-                required
-              />
-           
-            </div>
-
-            <button className="button-style w-100">Sign Up</button>
-
-            <p className="txt-style1 mt-5">
-              Already a member?{" "}
-              <Link className="txt-style2" href="/userLogin">
-                <strong>Login!</strong>
-              </Link>
-            </p>
-          </form>
+              <p className="txt-style1 mt-5">
+                Already a member?{" "}
+                <a className="txt-style2" href="#">
+                  <strong>Sign In!</strong>
+                </a>
+              </p>
+            </form>
+          </div>
         </div>
-      </div>
-    </>
+      </>
+
+    
+    </div>
   );
 }
 

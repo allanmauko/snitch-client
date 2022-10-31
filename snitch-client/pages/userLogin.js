@@ -53,7 +53,7 @@ function UserLogin({ setCurrentUser }) {
             </span>
           </div>
 
-          <form className="form-content">
+          <form onClick={handleUserSubmit} className="form-content">
             <div className="input-wrapper">
               <label htmlFor="username" className="text-l">
                 Email:
@@ -91,21 +91,10 @@ function UserLogin({ setCurrentUser }) {
                   </div>;
                 })}
                 <span className="form-control-focus"></span>
-                {/* <div
-                  className="input-group-addon"
-                  onClick="passwordVisibility();"
-                >
-                  <i className="fa fa-eye" id="showPass"></i>
-                  <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                </div> */}
               </div>
             </div>
 
-            <button
-              className="button-style w-100"
-              type="submit"
-              onClick={handleUserSubmit}
-            >
+            <button className="button-style w-100" type="submit">
               Login
             </button>
 
