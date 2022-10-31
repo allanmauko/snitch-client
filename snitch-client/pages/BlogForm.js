@@ -12,9 +12,9 @@ function BlogForm() {
   const [image_url, setImageURL] = useState("");
   const [title, setTitle] = useState("");
   const [value, setValue] = useState("");
-  const [number_of_likes, setNumberOfLikes] = useState(3)
-  const [category_id, setCategoryId] = useState(3)
-  const [user_id, setUserId] = useState(3)
+  const [number_of_likes, setNumberOfLikes] = useState()
+  // const [category_id, setCategoryId] = useState(3)
+  // const [user_id, setUserId] = useState(3)
 
 // const navigate = useNavigate();
 
@@ -30,8 +30,6 @@ const handlePublishBlog = (e) => {
     title,
     value,
     number_of_likes,
-    user_id,
-    category_id
 }),
 })
   .then((response) => response.json())
@@ -58,6 +56,10 @@ const handlePublishBlog = (e) => {
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Blog Title</Form.Label>
         <Form.Control type="text" placeholder="Technology is the way of the future" onChange={(e) => setTitle(e.target.value)}/>
+      </Form.Group>
+      <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+        <Form.Label>Likes</Form.Label>
+        <Form.Control type="text" placeholder="Technology is the way of the future" onChange={(e) => setNumberOfLikes(e.target.value)}/>
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
         <Form.Label>Blog</Form.Label>
