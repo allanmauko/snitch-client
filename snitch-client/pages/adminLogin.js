@@ -19,7 +19,7 @@ function AdminLogin({ setCurrentUser }) {
 
   function handleUserSubmit(e) {
     e.preventDefault();
-    fetch("https://buildcon.herokuapp.com/admin_login", {
+    fetch("http://127.0.0.1:3000/admin_login", {
       method: "POST",
       headers: {
         "X-CSRF-Token": getCSRFToken(),
@@ -49,11 +49,11 @@ function AdminLogin({ setCurrentUser }) {
         <div className="form-wrapper">
           <div className="form-header">
             <span className="form-title">
-              You're The Admin <strong>BuildCon</strong>
+              Welcome Back To <strong>BuildCon</strong>
             </span>
           </div>
 
-          <form className="form-content">
+          <form onClick={handleUserSubmit} className="form-content">
             <div className="input-wrapper">
               <label htmlFor="username" className="text-l">
                 Email:
@@ -94,17 +94,13 @@ function AdminLogin({ setCurrentUser }) {
               </div>
             </div>
 
-            <button
-              className="button-style w-100"
-              type="submit"
-              onClick={handleUserSubmit}
-            >
+            <button className="button-style w-100" type="submit">
               Login
             </button>
 
             <p className="txt-style1 mt-5">
-              Not a member yet?{" "}
-              <Link className="txt-style2" href="/adminSignUp">
+              Not Admin?{" "}
+              <Link className="txt-style2" href="/userSignUp">
                 <strong>Create Account</strong>
               </Link>
             </p>
