@@ -1,30 +1,43 @@
-import React, { useState } from "react";
-import Header from "../../components/header/header";
+import React, { useState, useContext } from "react";
+import AppContext from "../components/AppContext";
+import Header from "../components/header/header";
+import Link from "next/link";
+// import { useNavigate } from "react-router-dom";
+import Router from "next/router";
 
-function AdminLogin({ setUser }) {
+function AdminLogin({ setCurrentUser }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
+  // const navigate = useNavigate();
+  const context = useContext(AppContext);
 
-  function handleAdminSubmit(e) {
+  // get csrf token
+  function getCSRFToken() {
+    return decodeURI(document.cookie.split("=")[1]);
+  }
+
+  function handleUserSubmit(e) {
     e.preventDefault();
-    fetch("http://127.0.0.1:3000/admin_login", {
+    fetch("http://127.0.0.1:3000/login", {
       method: "POST",
       headers: {
+        "X-CSRF-Token": getCSRFToken(),
         "Content-Type": "application/json"
       },
       body: JSON.stringify({
-        email,
-        password
+        email: email,
+        password: password
       })
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
-          setUser(user);
+          context.setCurrentUser(user);
+          console.log(user);
+          Router.push("/");
         });
-        window.location = "/admin_me";
       } else {
-        r.json().then((err) => setErrors(err.errors));
+        r.json().then((err) => console.log(err));
       }
     });
   }
@@ -36,13 +49,13 @@ function AdminLogin({ setUser }) {
         <div className="form-wrapper">
           <div className="form-header">
             <span className="form-title">
-              Login to <strong>BuildCon</strong>
+              Welcome Back To <strong>BuildCon</strong>
             </span>
           </div>
 
           <form className="form-content">
             <div className="input-wrapper">
-              <label htmlFor="username" className="text-l ">
+              <label htmlFor="username" className="text-l">
                 Email:
               </label>
               <input
@@ -78,13 +91,13 @@ function AdminLogin({ setUser }) {
                   </div>;
                 })}
                 <span className="form-control-focus"></span>
-                <div
+                {/* <div
                   className="input-group-addon"
                   onClick="passwordVisibility();"
                 >
                   <i className="fa fa-eye" id="showPass"></i>
                   <i className="fa fa-eye-slash d-none" id="hidePass"></i>
-                </div>
+                </div> */}
               </div>
             </div>
 
@@ -95,6 +108,13 @@ function AdminLogin({ setUser }) {
             >
               Login
             </button>
+
+            <p className="txt-style1 mt-5">
+              Not a member yet?{" "}
+              <Link className="txt-style2" href="/userSignUp">
+                <strong>Create Account</strong>
+              </Link>
+            </p>
           </form>
         </div>
       </div>
