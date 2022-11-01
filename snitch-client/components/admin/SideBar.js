@@ -1,4 +1,5 @@
 import React from 'react';
+import Content from './Content';
 
 const SideBar = () => {
   return (
@@ -28,7 +29,9 @@ const SideBar = () => {
                 className="fas fa-power-off me-2"></i>Logout</a>
           </div>
         </div>
+        <Content/>
       </div>
+
   );
 };
 

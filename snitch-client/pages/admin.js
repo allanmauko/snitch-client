@@ -1,5 +1,6 @@
 import React from 'react';
 import SideBar from '../components/admin/SideBar';
+import Content from '../components/admin/Content';
 
 
 const Admin = () => {
@@ -7,6 +8,7 @@ const Admin = () => {
       <div>
         <SideBar />
       </div>
+
   );
 };
 
