@@ -41,39 +41,22 @@ function UpdateArticle() {
       });
   };
 
-  // const handleUpdateArticle = () => {
-  //   fetch(`https://635aa5516f97ae73a632efe8.mockapi.io/blogs/${id}`, {
-  //     method: "PATCH",
-  //     body: JSON.stringify({
-  //       imageURL,
-  //       title,
-  //       blogItem,
-  //     }),
-  //     headers: {
-  //       "Content-type": "application/json",
-  //     },
-  //   })
-  //     .then((response) => response.json())
-  //     .then((data) => {
-  //       console.log(data);
-  //       Router.push("/")
-  //     });
-  // };
 
-  // const handleUpdateArticle = ()=> {
-  //   axios.put(`https://635aa5516f97ae73a632efe8.mockapi.io/blogs/${id}`, {
-  //       imageURL,
-  //       title,
-  //       blogItem
-  //     })
-  // };
+//   const handleUpdateArticle = ()=> {
+//     axios.put(`http://127.0.0.1:3000/articles/${id}`, {
+//         image_url,
+//         title,
+//         value,
+//         number_of_likes,
+//       })
+//   };
 
   useEffect(() => {
+    setImageURL(localStorage.getItem("image_url"));
+    setTitle(localStorage.getItem("title"));
+    setNumberOfLikes(localStorage.getItem("number_of_likes"));
+    setValue(localStorage.getItem("value"));
     setId(localStorage.getItem("id"));
-    setImageURL(localStorage.getItem("Image URL"));
-    setTitle(localStorage.getItem("Title"));
-    setValue(localStorage.getItem("Value"));
-    setNumberOfLikes(localStorage.getItem("Number of Likes"));
   }, []);
 
   return (
@@ -104,6 +87,7 @@ function UpdateArticle() {
             <Form.Label>Likes</Form.Label>
             <Form.Control
               type="text"
+              value={number_of_likes}
               placeholder="Technology is the way of the future"
               onChange={(e) => setNumberOfLikes(e.target.value)}
             />

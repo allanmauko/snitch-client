@@ -38,6 +38,19 @@ const context = useContext(AppContext)
     setArticles(updatedArticles)
   }
 
+  const setData = (id, image_url, title, value, number_of_likes) => {
+    console.log(id)
+    console.log(image_url)
+    console.log(title)
+    console.log(value)
+    console.log(number_of_likes)
+    localStorage.setItem("ID", id)
+    localStorage.setItem('image_url', image_url)
+    localStorage.setItem('title', title)
+    localStorage.setItem('value', value)
+    localStorage.setItem('number_of_likes', number_of_likes)
+}
+
   if(loading){
     return (
       <main>
@@ -55,7 +68,7 @@ const context = useContext(AppContext)
         <About />
         {/* <Services/> */}
         {/* <Articles articles={articles} removeArticle={removeArticle} /> */}
-        {context.currentUser ? <Articles articles={articles} removeArticle={removeArticle} /> : <h1>Kindly login to view blogs!</h1>}
+        {context.currentUser ? <Articles articles={articles} removeArticle={removeArticle} setData={setData} /> : <h1>Kindly login to view blogs!</h1>}
         <Team/>
         <Footer/>
       </div>
