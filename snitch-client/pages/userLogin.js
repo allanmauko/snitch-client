@@ -19,16 +19,16 @@ function UserLogin({ setCurrentUser }) {
 
   function handleUserSubmit(e) {
     e.preventDefault();
-    fetch("https://buildcon.herokuapp.com/login", {
+    fetch("http://127.0.0.1:3000/login", {
       method: "POST",
       headers: {
         "X-CSRF-Token": getCSRFToken(),
-        "Content-Type": "application/json",
+        "Content-Type": "application/json"
       },
       body: JSON.stringify({
         email: email,
-        password: password,
-      }),
+        password: password
+      })
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {
