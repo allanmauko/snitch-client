@@ -39,11 +39,11 @@ const context = useContext(AppContext)
   }
 
   const setData = (id, image_url, title, value, number_of_likes) => {
-    console.log(id)
-    console.log(image_url)
-    console.log(title)
-    console.log(value)
-    console.log(number_of_likes)
+    // console.log(id)
+    // console.log(image_url)
+    // console.log(title)
+    // console.log(value)
+    // console.log(number_of_likes)
     localStorage.setItem("ID", id)
     localStorage.setItem('image_url', image_url)
     localStorage.setItem('title', title)
