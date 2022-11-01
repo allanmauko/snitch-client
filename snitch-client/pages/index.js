@@ -3,7 +3,6 @@ import Script from "next/script";
 import { useState } from "react";
 import Page from "./home/page";
 
-
 export default function Home() {
   const [currentUser, setCurrentUser] = useState(null);
   return (

@@ -29,7 +29,7 @@ function UserSignUp() {
     }
 
     // send data to server
-    fetch("http://127.0.0.1:3000/signup", {
+    fetch("https://buildcon.herokuapp.com/signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

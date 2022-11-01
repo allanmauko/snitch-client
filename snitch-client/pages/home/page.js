@@ -19,11 +19,11 @@ const context = useContext(AppContext)
 
   useEffect(() => {
     setLoading(true)
-    fetch('http://127.0.0.1:3000/articles')
+    fetch("https://buildcon.herokuapp.com/articles")
     .then(res => res.json())
     .then(data => {
-      setLoading(false)
       setArticles(data)
+      setLoading(false)
     })
     .catch(error => {
       setLoading(false)

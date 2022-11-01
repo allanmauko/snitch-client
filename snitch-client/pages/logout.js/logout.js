@@ -1,5 +1,5 @@
 function Logout() {
-    fetch("http://127.0.0.1:3000/logout", {
+    fetch("https://buildcon.herokuapp.com/logout", {
       method: "DELETE"
     })
       .then((response) => response.json())

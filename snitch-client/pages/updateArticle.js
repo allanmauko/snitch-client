@@ -19,7 +19,7 @@ function UpdateArticle() {
 
   const handleUpdateArticle = (e) => {
     e.preventDefault();
-    fetch(`http://127.0.0.1:3000/articles/${id}`, {
+    fetch("https://buildcon.herokuapp.com/articles/${id}", {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

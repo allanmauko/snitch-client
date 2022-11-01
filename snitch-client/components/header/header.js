@@ -42,6 +42,11 @@ const Header = () => {
                       Blogs
                     </Link>
                   </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" href="./updateArticle">
+                      Articles
+                    </Link>
+                  </li>
                   <li className="nav-item dropdown">
                     <Link
                       className="nav-link dropdown-toggle d-flex align-items-center"

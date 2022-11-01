@@ -33,7 +33,7 @@ function UserLogin({ setCurrentUser }) {
         r.json().then((user) => {
           context.setCurrentUser(user);
           console.log(user);
-          Router.push("/");
+          Router.push("/userPage");
         });
       } else {
         r.json().then((err) => console.log(err));
