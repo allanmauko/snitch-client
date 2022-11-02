@@ -38,12 +38,12 @@ const Header = () => {
               {context.currentUser ? (
                 <>
                   <li className="nav-item">
-                    <Link className="nav-link" href="./writeArticle">
+                    <Link className="nav-link" href="/writeArticle">
                       Write
                     </Link>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" href="././writeArticle">
+                    <Link className="nav-link" href="/articles">
                       Blogs
                     </Link>
                   </li>

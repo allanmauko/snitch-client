@@ -5,6 +5,7 @@ import About from "../../sections/about";
 import Services from "../../sections/services";
 import Team from "../../sections/team";
 import Footer from "../../sections/footer";
+import WriteArticle from "../writeArticle";
 
 const Page = () => {
   return (
