@@ -2,14 +2,12 @@ import React, { useState, useEffect } from "react";
 import Swal from "sweetalert2";
 import Header from "../components/header/header";
 // import Link from "next/link";
-
 function AdminSignUp() {
   // Declaring the initials
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordConfirm, setPasswordConfirm] = useState("");
-
   // handle user registration
   function handleSubmit(e) {
     e.preventDefault();
@@ -19,7 +17,7 @@ function AdminSignUp() {
       let misMatchAlert = Swal.fire({
         type: "error",
         title: "Oops...",
-        text: "Passwords don't match"
+        text: "Passwords don't match",
       });
       // after alert reload page
       misMatchAlert.then(function () {
@@ -27,7 +25,6 @@ function AdminSignUp() {
       });
       return;
     }
-
     // send data to server
     fetch("http://127.0.0.1:3000/admin_signup", {
       method: "POST",
@@ -69,7 +66,6 @@ function AdminSignUp() {
         });
       });
   }
-
   return (
     <div>
       <>
@@ -81,7 +77,6 @@ function AdminSignUp() {
                 Sign up to <strong>Build Con</strong>
               </span>
             </div>
-
             <form onSubmit={handleSubmit} className="form-content">
               <div className="form-group"></div>
               <div className="input-wrapper">
@@ -125,7 +120,6 @@ function AdminSignUp() {
                   </div>
                 </div>
               </div>
-
               <div className="input-wrapper">
                 <input
                   className="form-control"
@@ -136,11 +130,9 @@ function AdminSignUp() {
                 />
                 <span className="input-style-focus"></span>
               </div>
-
               <button className="button-style w-100" type="submit">
                 Sign Up
               </button>
-
               <p className="txt-style1 mt-5">
                 Already Admin?{" "}
                 <a className="txt-style2" href="#">
@@ -154,5 +146,4 @@ function AdminSignUp() {
     </div>
   );
 }
-
 export default AdminSignUp;

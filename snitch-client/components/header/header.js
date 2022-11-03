@@ -39,7 +39,7 @@ const Header = () => {
                 <>
                   <li className="nav-item">
                     <Link className="nav-link" href="./writeArticle">
-                      Write
+                      Blog
                     </Link>
                   </li>
                   {/* <li className="nav-item">

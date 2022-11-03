@@ -87,9 +87,10 @@ const Page = () => {
           removeArticle={removeArticle}
           setData={setData}
         />
+        
       ) : (
         <h1 className="Text-center" style={{ alignText: "center" }}>
-          Interested!kindly login to view blogs!
+          {/* Interested!kindly login to view blogs! */}
         </h1>
       )}
       {/* <Team /> */}

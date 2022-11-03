@@ -78,6 +78,15 @@ function Article({
               >
                 Not interested in this Article
               </button>
+              {/* <button
+                className="btn-update btn btn-success"
+                style={{ color: "white" }}
+                onClick={() =>
+                  setData(id, image_url, title, value, number_of_likes)
+                }
+              >
+                <Link href="/updateArticle">Update Blog</Link>
+              </button> */}
               <Comment />
             </div>
           </div>

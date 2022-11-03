@@ -4,19 +4,16 @@ import Header from "../components/header/header";
 import Link from "next/link";
 // import { useNavigate } from "react-router-dom";
 import Router from "next/router";
-
 function AdminLogin({ setCurrentUser }) {
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
   const [errors, setErrors] = useState([]);
   // const navigate = useNavigate();
   const context = useContext(AppContext);
-
   // get csrf token
   function getCSRFToken() {
     return decodeURI(document.cookie.split("=")[1]);
   }
-
   function handleUserSubmit(e) {
     e.preventDefault();
     fetch("http://127.0.0.1:3000/admin_login", {
@@ -41,7 +38,6 @@ function AdminLogin({ setCurrentUser }) {
       }
     });
   }
-
   return (
     <>
       <Header />
@@ -52,7 +48,6 @@ function AdminLogin({ setCurrentUser }) {
               Welcome Back To <strong>BuildCon</strong>
             </span>
           </div>
-
           <form onClick={handleUserSubmit} className="form-content">
             <div className="input-wrapper">
               <label htmlFor="username" className="text-l">
@@ -66,10 +61,8 @@ function AdminLogin({ setCurrentUser }) {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-
               <span className="input-style-focus"></span>
             </div>
-
             <div className="input-wrapper">
               <div className="input-group">
                 <label htmlFor="username" className="text-l">
@@ -93,11 +86,9 @@ function AdminLogin({ setCurrentUser }) {
                 <span className="form-control-focus"></span>
               </div>
             </div>
-
             <button className="button-style w-100" type="submit">
               Login
             </button>
-
             <p className="txt-style1 mt-5">
               Not Admin?{" "}
               <Link className="txt-style2" href="/userSignUp">
@@ -110,5 +101,4 @@ function AdminLogin({ setCurrentUser }) {
     </>
   );
 }
-
 export default AdminLogin;

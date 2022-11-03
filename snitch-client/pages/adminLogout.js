@@ -8,7 +8,5 @@ function AdminLogout() {
       localStorage.clear();
       window.location = "/";
     });
-
-//   return <div>userLogout</div>;
 }
-  export default AdminLogout;
+export default AdminLogout;
