@@ -32,13 +32,13 @@ function AdminSignUp() {
     fetch("http://127.0.0.1:3000/admin_signup", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         username: username,
         email: email,
-        password: password
-      })
+        password: password,
+      }),
     })
       .then((response) => response.json())
       .then((data) => {
@@ -47,7 +47,7 @@ function AdminSignUp() {
         let successAlert = new Swal({
           title: "Success!",
           text: "Admin saved successfully!",
-          type: "success"
+          type: "success",
         });
         // after successful sign up then login
         successAlert.then(function () {
@@ -61,7 +61,7 @@ function AdminSignUp() {
         let failAlert = new Swal({
           title: "Oops!",
           text: "Admin not saved!",
-          type: "error"
+          type: "error",
         });
         // after alert reload page
         failAlert.then(function () {

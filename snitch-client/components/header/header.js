@@ -42,11 +42,11 @@ const Header = () => {
                       Write
                     </Link>
                   </li>
-                  <li className="nav-item">
+                  {/* <li className="nav-item">
                     <Link className="nav-link" href="././writeArticle">
                       Blogs
                     </Link>
-                  </li>
+                  </li> */}
 
                   <div className="dropdown">
                     <button
@@ -71,7 +71,7 @@ const Header = () => {
                       aria-labelledby="navbarDropdownMenuLink"
                     >
                       <li>
-                        <Link className="dropdown-item" href="/">
+                        <Link className="dropdown-item" href="/profile">
                           My profile
                         </Link>
                       </li>

@@ -2,7 +2,7 @@ import React from "react";
 
 function userLogout() {
   fetch("http://127.0.0.1:3000/logout", {
-    method: "DELETE"
+    method: "DELETE",
   })
     .then((response) => response.json())
     .then((data) => {

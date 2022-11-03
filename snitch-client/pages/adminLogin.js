@@ -23,12 +23,12 @@ function AdminLogin({ setCurrentUser }) {
       method: "POST",
       headers: {
         "X-CSRF-Token": getCSRFToken(),
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({
         email: email,
-        password: password
-      })
+        password: password,
+      }),
     }).then((r) => {
       if (r.ok) {
         r.json().then((user) => {

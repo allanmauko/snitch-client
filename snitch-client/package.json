@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "PORT=3001 next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -11,10 +11,11 @@
   "dependencies": {
     "@heroicons/react": "^2.0.12",
     "bootstrap": "^5.2.2",
-    "next": "^13.0.0",
+    "next": "^13.0.1",
     "next-themes": "^0.2.1",
     "polished": "^4.2.2",
     "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.2",
     "rsuite": "^5.21.0",
