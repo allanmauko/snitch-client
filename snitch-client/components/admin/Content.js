@@ -2,7 +2,23 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
+
 const Content = () => {
+
+  /*
+  const [articles, setArticles] = useState('')
+  const [articlesCount, setAticlesCount] = useState(props.articles.length)
+  const [commentsCount, setCommentsCount] = useState(props.comments.length)
+
+  useEffect(() => {
+    fetch("http://localhost:3000/articles")
+      .then((response) => response.json())
+      .then((articles) => {
+        setAllArticles(articles);
+      });
+  }, []);
+ */
+
   return (
       <div id="page-content-wrapper">
         <nav
@@ -40,7 +56,7 @@ const Content = () => {
                 <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a className="dropdown-item" href="#">Profile</a></li>
                   <li><a className="dropdown-item" href="#">Settings</a></li>
-                  <li><a className="dropdown-item" href="#">Logout</a></li>
+                  <li><a className="dropdown-item" href="/adminLogout">Logout</a></li>
                 </ul>
               </button>
             </ul>
@@ -112,9 +128,9 @@ const Content = () => {
                 <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Television</td>
-                  <td>Jonny</td>
-                  <td>$1200</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
                 </tbody>
               </table>
