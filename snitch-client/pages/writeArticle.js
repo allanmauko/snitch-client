@@ -3,6 +3,7 @@ import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import Button from "react-bootstrap/Button";
 import Router from "next/router";
+import Header from "../components/header/header";
 
 function WriteArticle() {
   const [image_url, setImageURL] = useState("");
@@ -36,7 +37,8 @@ function WriteArticle() {
       });
   };
   return (
-    <div style={{ width: "70%", align: "center", margin: "auto" }}>
+    <div style={{ width: "70%", align: "center", margin: "auto", marginTop: '80px' }}>
+      <Header/>
       <Form>
         <Form.Label htmlFor="basic-url">Your Image URL</Form.Label>
         <InputGroup

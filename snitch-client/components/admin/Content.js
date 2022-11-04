@@ -1,7 +1,6 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-
 const Content = () => {
   return (
     <div id="page-content-wrapper">
@@ -13,7 +12,6 @@ const Content = () => {
           ></i>
           <h2 className="fs-2 m-0">Dashboard</h2>
         </div>
-
         <button
           className="navbar-toggler"
           type="button"
@@ -25,7 +23,6 @@ const Content = () => {
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
             <button className="nav-item dropdown">
@@ -51,7 +48,7 @@ const Content = () => {
                   </a>
                 </li>
                 <li>
-                  <a className="dropdown-item" href="#">
+                  <a className="dropdown-item" href="/adminLogout">
                     Logout
                   </a>
                 </li>
@@ -60,7 +57,6 @@ const Content = () => {
           </ul>
         </div>
       </nav>
-
       <div className="container-fluid px-4">
         <div className="row g-3 my-2">
           <div className="col-md-3">
@@ -72,7 +68,6 @@ const Content = () => {
               <i className="fas fa-gift fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
           </div>
-
           <div className="col-md-3">
             <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
@@ -82,7 +77,6 @@ const Content = () => {
               <i className="fas fa-hand-holding-usd fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
           </div>
-
           <div className="col-md-3">
             <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
@@ -92,7 +86,6 @@ const Content = () => {
               <i className="fas fa-truck fs-1 primary-text border rounded-full secondary-bg p-3"></i>
             </div>
           </div>
-
           <div className="col-md-3">
             <div className="p-3 bg-white shadow-sm d-flex justify-content-around align-items-center rounded">
               <div>
@@ -103,9 +96,8 @@ const Content = () => {
             </div>
           </div>
         </div>
-
         <div className="row my-5">
-          <h3 className="fs-4 mb-3">Recent Orders</h3>
+          <h3 className="fs-4 mb-3">Users</h3>
           <div className="col">
             <table className="table bg-white rounded shadow-sm  table-hover">
               <thead>
@@ -121,9 +113,9 @@ const Content = () => {
               <tbody>
                 <tr>
                   <th scope="row">1</th>
-                  <td>Television</td>
-                  <td>Jonny</td>
-                  <td>$1200</td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
@@ -133,5 +125,4 @@ const Content = () => {
     </div>
   );
 };
-
 export default Content;
