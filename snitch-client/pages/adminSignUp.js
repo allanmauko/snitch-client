@@ -26,7 +26,7 @@ function AdminSignUp() {
       return;
     }
     // send data to server
-    fetch("http://127.0.0.1:3000/admin_signup", {
+    fetch("https://buildcon.herokuapp.com/admin_signup", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

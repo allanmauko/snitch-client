@@ -1,5 +1,5 @@
 function AdminLogout() {
-  fetch("http://127.0.0.1:3000/admin_logout", {
+  fetch("https://buildcon.herokuapp.com/admin_logout", {
     method: "DELETE",
   })
     .then((response) => response.json())

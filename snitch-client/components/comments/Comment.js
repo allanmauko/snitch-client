@@ -33,7 +33,7 @@ export default function Comment({ x, article_id }) {
     // if (user) {
     //   if (postEdit) {
     console.log(newC);
-    fetch("http://127.0.0.1:3000/comments", {
+    fetch("https://buildcon.herokuapp.com/comments", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newC),
@@ -76,7 +76,7 @@ export default function Comment({ x, article_id }) {
     });
   }
   function handleDelete(id) {
-    fetch(`http://127.0.0.1:3000/comments/${id}`, {
+    fetch(`https://buildcon.herokuapp.com/comments/${id}`, {
       method: "DELETE",
     });
     deleteEvent(id);

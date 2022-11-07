@@ -42,7 +42,7 @@ const Page = () => {
   const [articles, setArticles] = useState([]);
   useEffect(() => {
     setLoading(true);
-    fetch("http://localhost:3000/articles")
+    fetch("https://buildcon.herokuapp.com/articles")
       .then((res) => res.json())
       .then((data) => {
         setLoading(false);
